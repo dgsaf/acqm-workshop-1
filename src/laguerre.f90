@@ -40,7 +40,7 @@ contains
     end do
 
     ! recurrence relation for basis normalisation constants
-    norm(1) = sqrt(alpha / real((l + 1) * gamma((2 * l) + 2)))
+    norm(1) = sqrt(alpha / real((l + 1) * gamma((2 * l) + 2.0)))
 
     do kk = 2, n_basis
       norm(kk) = norm(kk-1) * sqrt(real(kk * (kk + l)) / &

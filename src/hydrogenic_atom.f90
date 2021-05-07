@@ -1,9 +1,9 @@
 !>
 program hydrogenic_atom
-  implicit none
 
   use laguerre
-  use rsg
+
+  implicit none
 
   ! debugging flag
   logical , parameter :: debugging = .true.
@@ -211,17 +211,17 @@ contains
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(max(abs(x(:))))) + d
+    w = ceiling(log10(maxval(abs(x(:))))) + d
 
     write (str_w, *) w
     write (str_d, *) d
 
-    write (fmt, *) "(f", trim(adustl(str_w)), ".", trim(adustl(str_d)), ")"
+    write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
     write (*, *) fmt
 
     ! write out matrix elements
-    do ii = 1, n_rows
+    do ii = 1, n
       ! todo: if x(ii) will be written as "0.00..0", replace with "     ."
       write (*, fmt) x(ii)
     end do
@@ -238,12 +238,12 @@ contains
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(max(abs(A(:, :))))) + d
+    w = ceiling(log10(maxval(abs(A(:, :))))) + d
 
     write (str_w, *) w
     write (str_d, *) d
 
-    write (fmt, *) "(f", trim(adustl(str_w)), ".", trim(adustl(str_d)), ")"
+    write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
     write (*, *) fmt
 
@@ -252,7 +252,7 @@ contains
       do jj = 1, n_cols
         ! todo: if A(ii, jj) will be written as "0.00..0", replace with "     ."
         write (*, fmt, advance="no") A(ii, jj)
-        write (*, *, advance="no") " "
+        write (*, "(a)", advance="no") " "
       end do
       write (*, *)
     end do
@@ -269,12 +269,12 @@ contains
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(max(abs(basis(:, :))))) + d
+    w = ceiling(log10(maxval(abs(basis(:, :))))) + d
 
     write (str_w, *) w
     write (str_d, *) d
 
-    write (fmt, *) "(f", trim(adustl(str_w)), ".", trim(adustl(str_d)), ")"
+    write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
     write (*, *) fmt
 
@@ -284,7 +284,7 @@ contains
         ! todo: if basis(ii, jj) will be written as "0.00..0", replace with
         ! "     ."
         write (*, fmt, advance="no") basis(ii, jj)
-        write (*, *, advance="no")  " "
+        write (*, "(a)", advance="no")  " "
       end do
       write (*, *)
     end do
