@@ -32,20 +32,26 @@ contains
     basis(:, 1) = ((2.0 * alpha_grid(:)) ** (l + 1)) * &
         exp(-alpha_grid(:))
 
-    basis(:, 2) = 2.0 * (l + 1 - alpha_grid(:)) * basis(:, 1)
+    if (n_basis >= 2) then
+      basis(:, 2) = 2.0 * (l + 1 - alpha_grid(:)) * basis(:, 1)
+    end if
 
-    do kk = 3, n_basis
-      basis(:, kk) = ((2.0 * (kk - 1 + l - alpha_grid(:)) * basis(:, kk-1)) &
-          - (kk + (2 * l) - 1) * basis(:, kk-2)) / real(kk - 1)
-    end do
+    if (n_basis >= 3) then
+      do kk = 3, n_basis
+        basis(:, kk) = ((2.0 * (kk - 1 + l - alpha_grid(:)) * basis(:, kk-1)) &
+            - (kk + (2 * l) - 1) * basis(:, kk-2)) / real(kk - 1)
+      end do
+    end if
 
     ! recurrence relation for basis normalisation constants
     norm(1) = sqrt(alpha / real((l + 1) * gamma((2 * l) + 2.0)))
 
-    do kk = 2, n_basis
-      norm(kk) = norm(kk-1) * sqrt(real(kk * (kk + l)) / &
-          real((kk + l + 1) * (kk + (2 * l) + 1)))
-    end do
+    if (n_basis >= 2) then
+      do kk = 2, n_basis
+        norm(kk) = norm(kk-1) * sqrt(real(kk * (kk + l)) / &
+            real((kk + l + 1) * (kk + (2 * l) + 1)))
+      end do
+    end if
 
     ! scaling basis functions by normalisation constants
     do kk = 1, n_basis

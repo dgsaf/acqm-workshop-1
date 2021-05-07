@@ -122,8 +122,11 @@ program hydrogenic_atom
   ! deallocate arrays
   deallocate(r_grid)
 
+  write (*, *) "<>"
   deallocate(basis)
+  write (*, *) "<>"
   deallocate(eigen_basis)
+  write (*, *) "<>"
 
   deallocate(B)
   deallocate(K)
