@@ -86,6 +86,7 @@ program hydrogenic_atom
   eigen_values(:) = 0.0
   eigen_vectors(:, :) = 0.0
 
+  write (*, *) B(:, :)
   call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
 
   if (ierr /= 0) then

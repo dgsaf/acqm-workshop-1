@@ -43,6 +43,7 @@ c     this version dated august 1983.
 c
 c     ------------------------------------------------------------------
 c
+      write (*, *) b(:, :)
       if (n .le. nm) go to 10
       ierr = 10 * n
       go to 50
