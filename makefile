@@ -1,0 +1,198 @@
+# here the make accepts the compiler, gpu, calctype
+# will add a make print to indicate what types of compilations
+# are enabled.
+COMPILERTYPE ?= GCC
+GPUTYPE ?= NVIDIA
+OPTLEVEL ?= 2
+PROFILER ?= OFF
+
+# optmisation flags
+OPTFLAGS = -O$(OPTLEVEL)
+# profiling flags if desired
+ifeq ($(PROFILER), ON)
+	OPTFLAGS += -pg -g
+endif
+
+# formatting characters for info output
+NULL :=
+TAB := $(NULL)  $(NULL)
+
+# lets define a bunch of compilers
+GCC = gcc
+GCCCXX = g++
+GCCFORT = gfortran
+CLANG = clang
+CLANGCXX = clang++
+CLANGFORT = flang
+AOMP = aompcc
+AOMPCXX = aompcc
+CRAYCC = cc
+CRAYCXX = CC
+CRAYFORT = ftn
+INTELCC = icc
+INTELCXX = icpc
+INTELFORT = ifort
+
+# C flags. Currently only really need to enforce c11 standard
+GCCCFLAGS = -std=c11
+
+# fortran flags
+GCCFFLAGS = -cpp -ffixed-line-length-none -dM
+INTELFFLAGS = -cpp -extend-source -D_INTELFTN
+
+# cuda
+NCC = nvcc
+NCXX = nvcc
+CUDA_FLAGS = -DUSECUDA
+
+# hip
+HCC = hipcc
+HCXX = hipcc
+HIP_FLAGS = -DUSEHIP
+OCL_FLAGS = -lOpenCL -DUSEOPENCL
+
+# mpi
+MPICC = mpicc
+MPICXX = mpicxx
+MPIFORT = mpif90
+
+# openmp
+GCCOMP_FLAGS = -fopenmp -DUSEOPENMP
+GCCOMPTARGET_FLAGS = -fopenmp -DUSEOPENMPTARGET
+INTELOMP_FLAGS = -qopenmp -DUSEOPENMP
+INTELMPTARGET_FLAGS = -qopenmp -DUSEOPENMPTARGET
+GCCOACC_FLAGS = -fopenacc -fopt-info-optimized-omp -DUSEOPENACC
+INTELOACC_FLAGS = -qopenacc -fopt-info-optimized-omp -DUSEOPENACC
+
+#now set the default compilers
+CC = $(GCC)
+CXX = $(GCCCXX)
+FORT = $(GCCFORT)
+GPUCC = $(NCC)
+GPUCXX = $(NCXX)
+FFLAGS = $(GCCFFLAGS)
+OMP_FLAGS = $(GCCOMP_FLAGS)
+OMPTARGET_FLAGS = $(GCCOMPTARGET_FLAGS)
+OACC_FLAGS = $(GCCOACC_FLAGS)
+CFLAGS = $(GCCCFLAGS)
+
+# change if required
+ifeq ($(COMPILERTYPE), CLANG)
+	CC = $(CLANG)
+	CXX = $(CLANGCXX)
+	FORT = $(CLANGFORT)
+endif
+ifeq ($(COMPILERTYPE), AOMP)
+	CC = $(AOMP)
+	CXX = $(AOMPCXX)
+endif
+ifeq ($(COMPILERTYPE), CRAY)
+	CC = $(CRAYCC)
+	CXX = $(CRAYCXX)
+	FORT = $(CRAYFORT)
+	FFLAGS = -eZ -ffree
+endif
+ifeq ($(COMPILERTYPE), INTEL)
+	CC = $(INTELCC)
+	CXX = $(INTELCXX)
+	FORT = $(INTELFORT)
+	FFLAGS = $(INTELFFLAGS)
+	OMP_FLAGS = $(INTELOMP_FLAGS)
+	OMPTARGET_FLAGS = $(INTELOMPTARGET_FLAGS)
+endif
+ifeq ($(GPUTYPE), AMD)
+	GPUCC = $(HCC)
+	GPUCCXX = $(HCXX)
+endif
+
+# compiler used for openmp
+OMPCC = $(CC)
+OMPCXX = $(CXX)
+OMPFORT = $(FORT)
+
+# compilers used for openacc
+OACCCC = $(CC)
+OACCCXX = $(CXX)
+
+# compilers used for opencl
+OCLC = $(CCGPU)
+OCLCXX = $(CXXGPU)
+
+COMMONFLAGS = $(OPTFLAGS) $(VISUALFLAGS)
+
+.PHONY : dirs allinfo configinfo buildinfo makecommands clean
+
+all : dirs buildinfo cpu_serial cpu_serial_expanded
+
+allinfo : configinfo makecommands buildinfo
+
+# have it spit out information about current configuration
+configinfo :
+	$(info )
+	$(info ========================================)
+	$(info Compiler options:)
+	$(info ========================================)
+	$(info Allowed COMPILERTYPE: GCC, CLANG, AOMP, CRAY)
+	$(info Allowed GPUTYPE: NVIDIA, AMD)
+	$(info )
+	$(info Other options:)
+	$(info ----------------------------------------)
+	$(info One can also specify optmisation level with OPTLEVEL=)
+	$(info one can use 0, 1, 2, 3, or fast)
+	$(info )
+	$(info One can also turn on profiling flags using PROFILER=ON)
+	$(info )
+	$(info ========================================)
+	$(info )
+
+# list current build info given the commands make was passed
+buildinfo :
+	$(info )
+	$(info ========================================)
+	$(info Current compilers to be used:)
+	$(info ========================================)
+	$(info Compiling with $(CC) $(CXX) $(FORT) for CPU focused codes)
+	$(info Compiling with $(MPICC) $(MPICXX) $(MPIFORT) for MPI-CPU focused codes)
+	$(info Compiling with $(GPUCC) $(GPUCXX) for GPU focused codes)
+	$(info Compiling with $(OMPCC) $(OMPCXX) $(OMPFORT) for OpenMP directive GPU focused codes)
+	$(info Compiling with $(OACCCC) $(OACCCXX) $(OACCFORT) for OpenACC directive GPU focused codes)
+	$(info ========================================)
+	$(info )
+
+# list current build info given the commands make was passed
+makecommands :
+	$(info )
+	$(info ========================================)
+	$(info Make commands:)
+	$(info ========================================)
+	$(info Make is configured so that the following can be compiled if provided this argument)
+	$(info )
+	$(info hydrogenic_atom : compiles hydrogenic atom.)
+	$(info $(TAB)sources : hydrogenic_atom.f90)
+	$(info ========================================)
+	$(info )
+
+#
+dirs :
+	[ -d obj ] || mkdir obj
+	[ -d bin ] || mkdir bin
+
+#
+clean :
+	rm obj/*
+	rm bin/*
+
+#
+obj/rsg.o : src/rsg.f90
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/rsg.f90 -o obj/rsg.o
+
+#
+obj/laguerre.o : src/laguerre.f90
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/laguerre.f90 -o obj/laguerre.o
+
+#
+bin/hydrogenic_atom : src/hydrogenic_atom.f90 obj/rsg.o obj/laguerre.o
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/hydrogenic_atom.f90 \
+	-o obj/hydrogenic_atom.f90
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -o bin/hydrogenic_atom \
+	obj/hydrogenic_atom.o obj/rsg.o obj/laguerre.o
