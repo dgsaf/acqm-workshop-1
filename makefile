@@ -164,11 +164,13 @@ makecommands :
 #
 dirs :
 	[ -d obj ] || mkdir obj
+	[ -d mod ] || mkdir mod
 	[ -d bin ] || mkdir bin
 
 #
 clean :
 	rm obj/*
+	rm mod/*
 	rm bin/*
 
 #
@@ -181,11 +183,11 @@ obj/rsg.o : src/rsg.f
 #
 obj/laguerre.o : src/laguerre.f90
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/laguerre.f90 -o obj/laguerre.o \
-	-J obj/
+	-J mod/
 
 #
 bin/hydrogenic_atom : src/hydrogenic_atom.f90 obj/rsg.o obj/laguerre.o
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/hydrogenic_atom.f90 \
-	-o obj/hydrogenic_atom.o
+	-o obj/hydrogenic_atom.o -I mod/
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -o bin/hydrogenic_atom \
-	obj/hydrogenic_atom.o obj/rsg.o mod/laguerre.mod
+	obj/hydrogenic_atom.o obj/rsg.o obj/laguerre.o
