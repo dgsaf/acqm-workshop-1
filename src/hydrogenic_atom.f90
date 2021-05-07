@@ -32,7 +32,7 @@ program hydrogenic_atom
 
   ! local variables
   integer :: ii, jj, kk
-  integer :: ierr
+  integer :: ierr = 0
 
   ! read parameters from command line arguments
   call read_input(l, m, alpha, z, n_basis, d_r, r_max)
@@ -83,6 +83,9 @@ program hydrogenic_atom
   end if
 
   ! solve matrix equations
+  eigen_values(:) = 0.0
+  eigen_vectors(:, :) = 0.0
+
   call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
 
   if (ierr /= 0) then
@@ -93,11 +96,13 @@ program hydrogenic_atom
   if (debugging) then
     write (*, *) "eigen_values(n_basis)"
     call display_vector(n_basis, eigen_values)
+
+    write (*, *) "eigen_vectors(n_basis, n_basis)"
+    call display_matrix(n_basis, n_basis, eigen_vectors)
   end if
 
   ! calculate eigen-states
   eigen_basis(:, :) = 0.0
-
   do jj = 1, n_basis
     do ii = 1, n_r
       do kk = 1, n_basis
@@ -176,7 +181,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 10
+      n_basis = 1
     end if
 
     if (num_args >= 6) then
@@ -192,7 +197,7 @@ contains
       read (arg, *) r_max
     else
       write (*, *) "<r_max> not specified, using default value of 100.0"
-      r_max = 100.0
+      r_max = 10.0
     end if
 
   end subroutine read_input
