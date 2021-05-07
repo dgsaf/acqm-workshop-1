@@ -183,8 +183,7 @@ contains
       call get_command_argument(6, arg)
       read (arg, *) d_r
     else
-      write (*, *) "<d_r> not specified, using default value of 0.01"
-      ! d_r = 0.01
+      write (*, *) "<d_r> not specified, using default value of 0.1"
       d_r = 0.1
     end if
 
@@ -193,8 +192,7 @@ contains
       read (arg, *) r_max
     else
       write (*, *) "<r_max> not specified, using default value of 100.0"
-      ! r_max = 100.0
-      r_max = 10.0
+      r_max = 100.0
     end if
 
   end subroutine read_input
@@ -225,7 +223,7 @@ contains
     ! write out matrix elements
     do ii = 1, n
       ! if x(ii) will be written as "0.00..0", replace with " .     "
-      if (abs(x(ii)) > (10**(-d))) then
+      if (abs(x(ii)) > (10.0**(-d))) then
         write (*, fmt) x(ii)
       else
         write (*, "(a, a, a)") &
@@ -259,7 +257,7 @@ contains
     do ii = 1, n_rows
       do jj = 1, n_cols
         ! if A(ii, jj) will be written as "0.00..0", replace with " .     "
-        if (abs(A(ii, jj)) > (10**(-d))) then
+        if (abs(A(ii, jj)) > (10.0**(-d))) then
           write (*, fmt, advance="no") A(ii, jj)
         else
           write (*, "(a, a, a)", advance="no") &
@@ -294,7 +292,7 @@ contains
     do ii = 1, n_r
       do jj = 1, n_basis
         ! if basis(ii, jj) will be written as "0.00..0", replace with " .     "
-        if (abs(basis(ii, jj)) > (10**(-d))) then
+        if (abs(basis(ii, jj)) > (10.0**(-d))) then
           write (*, fmt, advance="no") basis(ii, jj)
         else
           write (*, "(a, a, a)", advance="no") &
