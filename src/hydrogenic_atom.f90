@@ -14,7 +14,7 @@ program hydrogenic_atom
 
   ! atomic variables
   ! z - atomic charge
-  integer :: z
+  integer :: atomic_charge
 
   ! radial grid variables
   integer :: n_r
@@ -35,7 +35,7 @@ program hydrogenic_atom
   integer :: ierr = 0
 
   ! read parameters from command line arguments
-  call read_input(l, m, alpha, z, n_basis, d_r, r_max)
+  call read_input(l, m, alpha, atomic_charge, n_basis, d_r, r_max)
   n_r = ceiling(r_max / d_r)
 
   ! allocate arrays
@@ -66,7 +66,7 @@ program hydrogenic_atom
   end if
 
   ! calculate matrix elements
-  call hydrogenic_matrices(l, m, alpha, z, n_basis, B, K, V, H)
+  call hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, H)
 
   if (debugging) then
     write (*, *) "B(n_basis, n_basis)"
@@ -89,7 +89,7 @@ program hydrogenic_atom
   call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
 
   if (ierr /= 0) then
-    write (*, "(a, i4)") "rsg failed with error code: ", ierr
+    write (*, "(a, i5)") "rsg failed with error code: ", ierr
     call exit(ierr)
   end if
 
@@ -122,11 +122,8 @@ program hydrogenic_atom
   ! deallocate arrays
   deallocate(r_grid)
 
-  write (*, *) "<>"
   deallocate(basis)
-  write (*, *) "<>"
   deallocate(eigen_basis)
-  write (*, *) "<>"
 
   deallocate(B)
   deallocate(K)
@@ -139,8 +136,8 @@ program hydrogenic_atom
 contains
 
   ! read_input
-  subroutine read_input (l, m, alpha, z, n_basis, d_r, r_max)
-    integer , intent(out) :: l, m, z, n_basis
+  subroutine read_input (l, m, alpha, atomic_charge, n_basis, d_r, r_max)
+    integer , intent(out) :: l, m, atomic_charge, n_basis
     real , intent(out) :: alpha, d_r, r_max
     integer :: num_args
     character(len=20) :: arg
@@ -173,10 +170,10 @@ contains
 
     if (num_args >= 4) then
       call get_command_argument(4, arg)
-      read (arg, *) z
+      read (arg, *) atomic_charge
     else
-      write (*, *) "<z> not specified, using default value of 1"
-      z = 1
+      write (*, *) "<atomic_charge> not specified, using default value of 1"
+      atomic_charge = 1
     end if
 
     if (num_args >= 5) then
@@ -184,7 +181,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 1
+      n_basis = 2
     end if
 
     if (num_args >= 6) then
