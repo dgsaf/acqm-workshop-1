@@ -184,7 +184,8 @@ contains
       read (arg, *) d_r
     else
       write (*, *) "<d_r> not specified, using default value of 0.01"
-      d_r = 0.01
+      ! d_r = 0.01
+      d_r = 0.1
     end if
 
     if (num_args >= 7) then
@@ -192,7 +193,8 @@ contains
       read (arg, *) r_max
     else
       write (*, *) "<r_max> not specified, using default value of 100.0"
-      r_max = 100.0
+      ! r_max = 100.0
+      r_max = 10.0
     end if
 
   end subroutine read_input
@@ -207,23 +209,29 @@ contains
     real , intent(in) :: x(n)
     integer :: ii
     integer :: w, d
-    character(len=50) :: fmt, str_w, str_d
+    character(len=50) :: fmt, str_w, str_d, str_zero
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(maxval(abs(x(:))))) + d
+    w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
     write (str_d, *) d
 
     write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
-    write (*, *) fmt
+    str_zero = repeat(' ', w)
 
     ! write out matrix elements
     do ii = 1, n
-      ! todo: if x(ii) will be written as "0.00..0", replace with "     ."
-      write (*, fmt) x(ii)
+      ! if x(ii) will be written as "0.00..0", replace with " .     "
+      if (abs(x(ii)) > (10**(-d))) then
+        write (*, fmt) x(ii)
+      else
+        write (*, "(a, a, a)") &
+            str_zero(1:w-d-1), ".", str_zero(w-d+1:w)
+      end if
+
     end do
 
   end subroutine display_vector
@@ -234,25 +242,29 @@ contains
     real , intent(in) :: A(n_rows, n_cols)
     integer :: ii, jj
     integer :: w, d
-    character(len=50) :: fmt, str_w, str_d
+    character(len=50) :: fmt, str_w, str_d, str_zero
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(maxval(abs(A(:, :))))) + d
+    w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
     write (str_d, *) d
 
     write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
-    write (*, *) fmt
+    str_zero = repeat(' ', w)
 
     ! write out matrix elements
     do ii = 1, n_rows
       do jj = 1, n_cols
-        ! todo: if A(ii, jj) will be written as "0.00..0", replace with "     ."
-        write (*, fmt, advance="no") A(ii, jj)
-        write (*, "(a)", advance="no") " "
+        ! if A(ii, jj) will be written as "0.00..0", replace with " .     "
+        if (abs(A(ii, jj)) > (10**(-d))) then
+          write (*, fmt, advance="no") A(ii, jj)
+        else
+          write (*, "(a, a, a)", advance="no") &
+              str_zero(1:w-d-1), ".", str_zero(w-d+1:w)
+        end if
       end do
       write (*, *)
     end do
@@ -265,26 +277,29 @@ contains
     real , intent(in) :: basis(n_r, n_basis)
     integer :: ii, jj
     integer :: w, d
-    character(len=50) :: fmt, str_w, str_d
+    character(len=50) :: fmt, str_w, str_d, str_zero
 
     ! determine real number formatting
     d = 4
-    w = ceiling(log10(maxval(abs(basis(:, :))))) + d
+    w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
     write (str_d, *) d
 
     write (fmt, *) "(f", trim(adjustl(str_w)), ".", trim(adjustl(str_d)), ")"
 
-    write (*, *) fmt
+    str_zero = repeat(' ', w)
 
     ! write out radial basis values
     do ii = 1, n_r
       do jj = 1, n_basis
-        ! todo: if basis(ii, jj) will be written as "0.00..0", replace with
-        ! "     ."
-        write (*, fmt, advance="no") basis(ii, jj)
-        write (*, "(a)", advance="no")  " "
+        ! if basis(ii, jj) will be written as "0.00..0", replace with " .     "
+        if (abs(basis(ii, jj)) > (10**(-d))) then
+          write (*, fmt, advance="no") basis(ii, jj)
+        else
+          write (*, "(a, a, a)", advance="no") &
+              str_zero(1:w-d-1), ".", str_zero(w-d+1:w)
+        end if
       end do
       write (*, *)
     end do
