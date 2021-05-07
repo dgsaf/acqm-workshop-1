@@ -1,6 +1,4 @@
-# here the make accepts the compiler, gpu, calctype
-# will add a make print to indicate what types of compilations
-# are enabled.
+# here the make accepts the compiler, gpu, optimisation level, profiling
 COMPILERTYPE ?= GCC
 GPUTYPE ?= NVIDIA
 OPTLEVEL ?= 2
@@ -17,7 +15,7 @@ endif
 NULL :=
 TAB := $(NULL)  $(NULL)
 
-# lets define a bunch of compilers
+# compilers definitions
 GCC = gcc
 GCCCXX = g++
 GCCFORT = gfortran
@@ -64,7 +62,7 @@ INTELMPTARGET_FLAGS = -qopenmp -DUSEOPENMPTARGET
 GCCOACC_FLAGS = -fopenacc -fopt-info-optimized-omp -DUSEOPENACC
 INTELOACC_FLAGS = -qopenacc -fopt-info-optimized-omp -DUSEOPENACC
 
-#now set the default compilers
+# set default compilers
 CC = $(GCC)
 CXX = $(GCCCXX)
 FORT = $(GCCFORT)
@@ -118,14 +116,17 @@ OACCCXX = $(CXX)
 OCLC = $(CCGPU)
 OCLCXX = $(CXXGPU)
 
-COMMONFLAGS = $(OPTFLAGS) $(VISUALFLAGS)
+COMMONFLAGS = $(OPTFLAGS)
 
+#
 .PHONY : dirs allinfo configinfo buildinfo makecommands clean
 .PHONY : hydrogenic_atom
 
+#
 all : dirs buildinfo hydrogenic_atom
 
-allinfo : configinfo makecommands buildinfo
+#
+allinfo : configinfo buildinfo makecommands
 
 # information about current configuration
 configinfo :
@@ -155,8 +156,10 @@ buildinfo :
 	$(info Compiling with $(CC) $(CXX) $(FORT) for CPU focused codes)
 	$(info Compiling with $(MPICC) $(MPICXX) $(MPIFORT) for MPI-CPU focused codes)
 	$(info Compiling with $(GPUCC) $(GPUCXX) for GPU focused codes)
-	$(info Compiling with $(OMPCC) $(OMPCXX) $(OMPFORT) for OpenMP directive GPU focused codes)
-	$(info Compiling with $(OACCCC) $(OACCCXX) $(OACCFORT) for OpenACC directive GPU focused codes)
+	$(info Compiling with $(OMPCC) $(OMPCXX) $(OMPFORT) for OpenMP directive GPU \
+	focused codes)
+	$(info Compiling with $(OACCCC) $(OACCCXX) $(OACCFORT) for OpenACC directive \
+	GPU focused codes)
 	$(info ========================================)
 	$(info )
 
@@ -166,7 +169,8 @@ makecommands :
 	$(info ========================================)
 	$(info Make commands:)
 	$(info ========================================)
-	$(info Make is configured so that the following can be compiled if provided this argument)
+	$(info Make is configured so that the following can be compiled if provided \
+	this argument)
 	$(info )
 	$(info hydrogenic_atom : compiles hydrogenic atom.)
 	$(info $(TAB)sources : hydrogenic_atom.f90)
@@ -187,8 +191,8 @@ clean :
 hydrogenic_atom : bin/hydrogenic_atom
 
 #
-obj/rsg.o : src/rsg.f90
-	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/rsg.f90 -o obj/rsg.o
+obj/rsg.o : src/rsg.f
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/rsg.f -o obj/rsg.o
 
 #
 obj/laguerre.o : src/laguerre.f90
