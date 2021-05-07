@@ -121,12 +121,13 @@ OCLCXX = $(CXXGPU)
 COMMONFLAGS = $(OPTFLAGS) $(VISUALFLAGS)
 
 .PHONY : dirs allinfo configinfo buildinfo makecommands clean
+.PHONY : hydrogenic_atom
 
-all : dirs buildinfo cpu_serial cpu_serial_expanded
+all : dirs buildinfo hydrogenic_atom
 
 allinfo : configinfo makecommands buildinfo
 
-# have it spit out information about current configuration
+# information about current configuration
 configinfo :
 	$(info )
 	$(info ========================================)
@@ -145,7 +146,7 @@ configinfo :
 	$(info ========================================)
 	$(info )
 
-# list current build info given the commands make was passed
+# information about current build given the commands make was passed
 buildinfo :
 	$(info )
 	$(info ========================================)
@@ -159,7 +160,7 @@ buildinfo :
 	$(info ========================================)
 	$(info )
 
-# list current build info given the commands make was passed
+# information about current build given the commands make was passed
 makecommands :
 	$(info )
 	$(info ========================================)
@@ -181,6 +182,9 @@ dirs :
 clean :
 	rm obj/*
 	rm bin/*
+
+#
+hydrogenic_atom : bin/hydrogenic_atom
 
 #
 obj/rsg.o : src/rsg.f90
