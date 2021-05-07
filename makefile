@@ -111,6 +111,7 @@ OMPFORT = $(FORT)
 # compilers used for openacc
 OACCCC = $(CC)
 OACCCXX = $(CXX)
+OACCFORT = $(FORT)
 
 # compilers used for opencl
 OCLC = $(CCGPU)
@@ -130,51 +131,34 @@ allinfo : configinfo buildinfo makecommands
 
 # information about current configuration
 configinfo :
-	$(info )
-	$(info ========================================)
 	$(info Compiler options:)
-	$(info ========================================)
-	$(info Allowed COMPILERTYPE: GCC, CLANG, AOMP, CRAY)
-	$(info Allowed GPUTYPE: NVIDIA, AMD)
-	$(info )
-	$(info Other options:)
-	$(info ----------------------------------------)
-	$(info One can also specify optmisation level with OPTLEVEL=)
-	$(info one can use 0, 1, 2, 3, or fast)
-	$(info )
-	$(info One can also turn on profiling flags using PROFILER=ON)
-	$(info )
-	$(info ========================================)
+	$(info > Compiler can be selected with COMPILERTYPE=(GCC|CLANG|AOMP|CRAY))
+	$(info > GPU compiler can be selected with GPUTYPE=(NVIDIA|AMD))
+	$(info > Optimisation level can be selected with OPTLEVEL=(0|1|2|3|fast))
+	$(info > Profiling can be turned on/off with PROFILER=(ON|OFF))
 	$(info )
 
 # information about current build given the commands make was passed
 buildinfo :
-	$(info )
-	$(info ========================================)
-	$(info Current compilers to be used:)
-	$(info ========================================)
-	$(info Compiling with $(CC) $(CXX) $(FORT) for CPU focused codes)
-	$(info Compiling with $(MPICC) $(MPICXX) $(MPIFORT) for MPI-CPU focused codes)
-	$(info Compiling with $(GPUCC) $(GPUCXX) for GPU focused codes)
-	$(info Compiling with $(OMPCC) $(OMPCXX) $(OMPFORT) for OpenMP directive GPU \
-	focused codes)
-	$(info Compiling with $(OACCCC) $(OACCCXX) $(OACCFORT) for OpenACC directive \
-	GPU focused codes)
-	$(info ========================================)
+	$(info Current compilers selected:)
+	$(info > Compiling with ($(CC)|$(CXX)|$(FORT)) for CPU focused codes)
+	$(info > Compiling with ($(MPICC)|$(MPICXX)|$(MPIFORT)) \
+	for MPI-CPU focused codes)
+	$(info > Compiling with ($(GPUCC)|$(GPUCXX)) for GPU focused codes)
+	$(info > Compiling with ($(OMPCC)|$(OMPCXX)|$(OMPFORT)) \
+	for OpenMP directive GPU focused codes)
+	$(info > Compiling with ($(OACCCC)|$(OACCCXX)|$(OACCFORT)) \
+	for OpenACC directive GPU focused codes)
 	$(info )
 
 # information about current build given the commands make was passed
 makecommands :
-	$(info )
-	$(info ========================================)
 	$(info Make commands:)
-	$(info ========================================)
-	$(info Make is configured so that the following can be compiled if provided \
-	this argument)
-	$(info )
-	$(info hydrogenic_atom : compiles hydrogenic atom.)
-	$(info $(TAB)sources : hydrogenic_atom.f90)
-	$(info ========================================)
+	$(info > Make is configured so that the following can be compiled \
+	if provided this argument:)
+	$(info > )
+	$(info > hydrogenic_atom : compiles hydrogenic atom.)
+	$(info > $(TAB)sources : hydrogenic_atom.f90)
 	$(info )
 
 #
