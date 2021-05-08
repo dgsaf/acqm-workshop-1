@@ -98,7 +98,7 @@ program hydrogenic_atom
 
   ! write output to file
   call write_output(l, m, alpha, atomic_charge, n_r, r_grid, n_basis, basis, &
-      eigen_basis)
+      eigen_basis, B, K, V, H)
 
   ! deallocate arrays
   deallocate(r_grid)
@@ -226,43 +226,53 @@ contains
 
   ! write_output
   subroutine write_output (l, m, alpha, atomic_charge, n_r, r_grid, n_basis, &
-      basis, eigen_basis)
+      basis, eigen_basis, B, K, V, H)
     integer , intent(in) :: l, m, atomic_charge, n_r, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(in) :: r_grid(n_r)
     double precision , intent(in) :: basis(n_r, n_basis), &
         eigen_basis(n_r, n_basis)
+    double precision , intent(in) :: B(n_basis, n_basis), K(n_basis, n_basis), &
+        V(n_basis, n_basis), H(n_basis, n_basis)
     character(len=1000) :: output_dir
-    character(len=1000) :: basis_filename, eigen_basis_filename
-    character(len=50) :: str_l, str_m, str_alpha, str_atomic_charge
+    character(len=50) :: str_l, str_m, str_alpha, str_atomic_charge, str_n_basis
 
     ! construct output directory for given parameters
     write (str_l, *) l
     write (str_m, *) m
     write (str_alpha, *) alpha
     write (str_atomic_charge, *) atomic_charge
+    write (str_n_basis, *) n_basis
 
     write (output_dir, *) &
         "output/", &
         "l-", trim(adjustl(str_l)), ".", &
         "m-", trim(adjustl(str_m)), ".", &
         "alpha-", trim(adjustl(str_alpha)), ".", &
-        "atomic_charge-", trim(adjustl(str_atomic_charge)) , "/"
+        "atomic_charge-", trim(adjustl(str_atomic_charge)) , ".", &
+        "n_basis-", trim(adjustl(str_n_basis)), "/"
 
     call execute_command_line("mkdir -p "//trim(adjustl(output_dir)))
 
-    ! construct output filenames
-    write (basis_filename, *) &
-        trim(adjustl(output_dir)), "basis.txt"
+    ! write basis and eigen_basis functions to file
+    call write_basis(n_r, r_grid, n_basis, basis, &
+        trim(adjustl(output_dir))//"basis.txt")
 
-    write (eigen_basis_filename, *) &
-        trim(adjustl(output_dir)), "eigen_basis.txt"
+    call write_basis(n_r, r_grid, n_basis, eigen_basis, &
+        trim(adjustl(output_dir))//"eigen_basis.txt")
 
-    ! write basis functions to file
-    call write_basis(n_r, r_grid, n_basis, basis, basis_filename)
+    ! write matrices to file
+    call write_matrix(n_basis, n_basis, B, &
+        trim(adjustl(output_dir))//"B.txt")
 
-    ! write eigen_basis functions to file
-    call write_basis(n_r, r_grid, n_basis, eigen_basis, eigen_basis_filename)
+    call write_matrix(n_basis, n_basis, K, &
+        trim(adjustl(output_dir))//"K.txt")
+
+    call write_matrix(n_basis, n_basis, V, &
+        trim(adjustl(output_dir))//"V.txt")
+
+    call write_matrix(n_basis, n_basis, H, &
+        trim(adjustl(output_dir))//"H.txt")
 
   end subroutine write_output
 
@@ -290,6 +300,30 @@ contains
     close (basis_file_unit)
 
   end subroutine write_basis
+
+  ! write_matrix
+  subroutine write_matrix (n_rows, n_cols, A, matrix_filename)
+    integer , intent(in) :: n_rows, n_cols
+    double precision , intent(in) :: A(n_rows, n_cols)
+    character(len=*) , intent(in) :: matrix_filename
+    integer :: matrix_file_unit
+    integer :: ii, jj
+
+    ! open file
+    matrix_file_unit = 10
+
+    open (unit=matrix_file_unit, file=trim(adjustl(matrix_filename)), &
+        action="write")
+
+    ! write matrix to file
+    do ii = 1, n_rows
+      write (matrix_file_unit, *) A(ii, :)
+    end do
+
+    ! close file
+    close (matrix_file_unit)
+
+  end subroutine write_matrix
 
   ! display_vector
   subroutine display_vector (n, x, dp)
