@@ -82,7 +82,7 @@ program hydrogenic_atom
   end if
 
   ! diagonalise
-  call diagonalise(n_r, n_basis, basis, H, B, eigen_values, eigen_vectors, &
+  call diagonalise(n_r, n_basis, basis, B, H, eigen_values, eigen_vectors, &
       eigen_basis)
 
   if (debugging) then
@@ -117,23 +117,31 @@ program hydrogenic_atom
 contains
 
   ! diagonalise
-  subroutine diagonalise (n_r, n_basis, basis, H, B, eigen_values, &
+  ! Note that since the call to rsg modifies the matrices it is given, we send
+  ! it copies of B, H.
+  subroutine diagonalise (n_r, n_basis, basis, B, H, eigen_values, &
       eigen_vectors, eigen_basis)
     integer , intent(in) :: n_r, n_basis
     double precision , intent(in) :: basis(n_r, n_basis)
-    double precision , intent(in) :: H(n_basis, n_basis), B(n_basis, n_basis)
+    double precision , intent(in) :: B(n_basis, n_basis), H(n_basis, n_basis)
     double precision , intent(out) :: eigen_values(n_basis)
     double precision , intent(out) :: eigen_vectors(n_basis, n_basis)
     double precision , intent(out) :: eigen_basis(n_r, n_basis)
+    double precision :: B_copy(n_basis, n_basis), H_copy(n_basis, n_basis)
     integer :: ii, jj, kk
     integer :: ierr
     double precision :: temp_sum
+
+    ! create copies of B, H matrices to use in call to rsg subroutine
+    B_copy(:, :) = B(:, :)
+    H_copy(:, :) = H(:, :)
 
     ! solve eigenvalue matrix equation
     eigen_values(:) = 0.0
     eigen_vectors(:, :) = 0.0
 
-    call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
+    call rsg(n_basis, n_basis, H_copy, B_copy, eigen_values, 1, eigen_vectors, &
+        ierr)
 
     if (ierr /= 0) then
       write (*, "(a, i5)") "rsg failed with error code: ", ierr
@@ -203,7 +211,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 10
+      n_basis = 5
     end if
 
     if (num_args >= 6) then
