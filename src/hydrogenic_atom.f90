@@ -97,6 +97,8 @@ program hydrogenic_atom
   end if
 
   ! write output to file
+  call write_output(l, m, alpha, atomic_charge, n_r, r_grid, n_basis, basis, &
+      eigen_basis)
 
   ! deallocate arrays
   deallocate(r_grid)
@@ -223,8 +225,64 @@ contains
   end subroutine read_input
 
   ! write_output
-  ! subroutine write_output ()
-  ! end subroutine write_output
+  subroutine write_output (l, m, alpha, atomic_charge, n_r, r_grid, n_basis, &
+      basis, eigen_basis)
+    integer , intent(in) :: l, m, atomic_charge, n_r, n_basis
+    double precision , intent(in) :: alpha
+    double precision , intent(in) :: r_grid(n_r)
+    double precision , intent(in) :: basis(n_r, n_basis), &
+        eigen_basis(n_r, n_basis)
+    character(len=1000) :: str_parameters
+    character(len=1000) :: basis_filename, eigen_basis_filename
+    character(len=50) :: str_l, str_m, str_alpha, str_atomic_charge
+
+    write (str_l, *) l
+    write (str_m, *) m
+    write (str_alpha, *) alpha
+    write (str_atomic_charge, *) atomic_charge
+
+    write (str_parameters, *) &
+        "output/", &
+        "l-", trim(adjustl(str_l)), ".", &
+        "m-", trim(adjustl(str_m)), ".", &
+        "alpha-", trim(adjustl(str_alpha)), ".", &
+        "atomic_charge-", trim(adjustl(str_atomic_charge))
+
+    write (basis_filename, *) &
+        trim(adjustl(str_parameters)), ".basis.txt"
+
+    write (eigen_basis_filename, *) &
+        trim(adjustl(str_parameters)), ".eigen_basis.txt"
+
+    call write_basis(n_r, r_grid, n_basis, basis, basis_filename)
+    call write_basis(n_r, r_grid, n_basis, eigen_basis, eigen_basis_filename)
+
+  end subroutine write_output
+
+  ! write_basis
+  subroutine write_basis (n_r, r_grid, n_basis, basis, basis_filename)
+    integer , intent(in) :: n_r, n_basis
+    double precision , intent(in) :: r_grid(n_r)
+    double precision , intent(in) :: basis(n_r, n_basis)
+    character(len=*) , intent(in) :: basis_filename
+    integer :: basis_file_unit
+    integer :: ii
+
+    ! open file
+    basis_file_unit = 10
+
+    open (unit=basis_file_unit, file=trim(adjustl(basis_filename)), &
+        action="write")
+
+    ! write r_grid, and basis functions to file
+    do ii = 1, n_r
+      write (basis_file_unit, *) r_grid(ii), " ", basis(ii, :)
+    end do
+
+    ! close file
+    close (basis_file_unit)
+
+  end subroutine write_basis
 
   ! display_vector
   subroutine display_vector (n, x, dp)
