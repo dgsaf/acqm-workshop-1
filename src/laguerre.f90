@@ -149,11 +149,12 @@ contains
   ! hydrogenic_matrices
   !
   ! Yields overlap, kinetic, potential and Hamiltonian matrices for given l, m,
-  ! alpha, z (atomic charge); that is: B, K, V, H.
+  ! alpha, atomic_charge; that is: B, K, V, H.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
-  subroutine hydrogenic_matrices(l, m, alpha, z, n_basis, B, K, V, H)
-    integer , intent(in) :: l, m, z, n_basis
+  subroutine hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, &
+      H)
+    integer , intent(in) :: l, m, atomic_charge, n_basis
     real , intent(in) :: alpha
     real , intent(out) :: B(n_basis, n_basis), K(n_basis, n_basis), &
         V(n_basis, n_basis), H(n_basis, n_basis)
@@ -163,7 +164,7 @@ contains
     call kinetic_matrix(l, m, alpha, n_basis, K)
 
     call coulomb_matrix(l, m, alpha, n_basis, V)
-    V(:, :) = - real(z) * V(:, :)
+    V(:, :) = - real(atomic_charge) * V(:, :)
 
     H(:, :) = K(:, :) + V(:, :)
 

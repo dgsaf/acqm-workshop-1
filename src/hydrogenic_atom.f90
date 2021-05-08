@@ -13,7 +13,6 @@ program hydrogenic_atom
   real :: alpha
 
   ! atomic variables
-  ! z - atomic charge
   integer :: atomic_charge
 
   ! radial grid variables
@@ -31,8 +30,7 @@ program hydrogenic_atom
   real , allocatable :: eigen_values(:), eigen_vectors(:, :)
 
   ! local variables
-  integer :: ii, jj, kk
-  integer :: ierr = 0
+  integer :: ii
 
   ! read parameters from command line arguments
   call read_input(l, m, alpha, atomic_charge, n_basis, d_r, r_max)
@@ -82,17 +80,9 @@ program hydrogenic_atom
     call display_matrix(n_basis, n_basis, H)
   end if
 
-  ! solve matrix equations
-  eigen_values(:) = 0.0
-  eigen_vectors(:, :) = 0.0
-
-  write (*, *) B(:, :)
-  call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
-
-  if (ierr /= 0) then
-    write (*, "(a, i5)") "rsg failed with error code: ", ierr
-    call exit(ierr)
-  end if
+  ! diagonalise
+  call diagonalise(n_r, n_basis, basis, H, B, eigen_values, eigen_vectors, &
+      eigen_basis)
 
   if (debugging) then
     write (*, *) "eigen_values(n_basis)"
@@ -100,20 +90,7 @@ program hydrogenic_atom
 
     write (*, *) "eigen_vectors(n_basis, n_basis)"
     call display_matrix(n_basis, n_basis, eigen_vectors)
-  end if
 
-  ! calculate eigen-states
-  eigen_basis(:, :) = 0.0
-  do jj = 1, n_basis
-    do ii = 1, n_r
-      do kk = 1, n_basis
-        eigen_basis(ii, jj) = eigen_basis(ii, jj) &
-            + (eigen_vectors(kk, jj) * basis(ii, kk))
-      end do
-    end do
-  end do
-
-  if (debugging) then
     write (*, *) "eigen_basis(n_r, n_basis)"
     call display_radial_basis(n_r, n_basis, eigen_basis)
   end if
@@ -135,6 +112,48 @@ program hydrogenic_atom
   deallocate(eigen_vectors)
 
 contains
+
+  ! diagonalise
+  subroutine diagonalise (n_r, n_basis, basis, H, B, eigen_values, &
+      eigen_vectors, eigen_basis)
+    integer , intent(in) :: n_r, n_basis
+    real , intent(in) :: basis(n_r, n_basis)
+    real , intent(in) :: H(n_basis, n_basis), B(n_basis, n_basis)
+    real , intent(out) :: eigen_values(n_basis)
+    real , intent(out) :: eigen_vectors(n_basis, n_basis)
+    real , intent(out) :: eigen_basis(n_r, n_basis)
+    integer :: ii, jj, kk
+    integer :: ierr
+    real :: temp_sum
+
+    ! solve eigenvalue matrix equation
+    eigen_values(:) = 0.0
+    eigen_vectors(:, :) = 0.0
+
+    write (*, *) B(:, :)
+    call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
+
+    if (ierr /= 0) then
+      write (*, "(a, i5)") "rsg failed with error code: ", ierr
+      call exit(ierr)
+    end if
+
+    ! calculate eigen-basis
+    eigen_basis(:, :) = 0.0
+
+    do jj = 1, n_basis
+      do ii = 1, n_r
+        temp_sum = 0.0
+
+        do kk = 1, n_basis
+          temp_sum = temp_sum + (eigen_vectors(kk, jj) * basis(ii, kk))
+        end do
+
+        eigen_basis(ii, jj) = temp_sum
+      end do
+    end do
+
+  end subroutine diagonalise
 
   ! read_input
   subroutine read_input (l, m, alpha, atomic_charge, n_basis, d_r, r_max)
