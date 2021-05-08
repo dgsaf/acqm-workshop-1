@@ -5,8 +5,9 @@ program hydrogenic_atom
 
   implicit none
 
-  ! debugging flag
+  ! global flags
   logical , parameter :: debugging = .true.
+  integer , parameter :: dp_default = 4
 
   ! angular quantum number variables
   integer :: l, m
@@ -60,7 +61,7 @@ program hydrogenic_atom
 
   if (debugging) then
     write (*, *) "basis(n_r, n_basis)"
-    call display_radial_basis(n_r, n_basis, basis)
+    call display_radial_basis(n_r, r_grid, n_basis, basis)
   end if
 
   ! calculate matrix elements
@@ -92,7 +93,7 @@ program hydrogenic_atom
     call display_matrix(n_basis, n_basis, eigen_vectors)
 
     write (*, *) "eigen_basis(n_r, n_basis)"
-    call display_radial_basis(n_r, n_basis, eigen_basis)
+    call display_radial_basis(n_r, r_grid, n_basis, eigen_basis)
   end if
 
   ! write output to file
@@ -130,7 +131,6 @@ contains
     eigen_values(:) = 0.0
     eigen_vectors(:, :) = 0.0
 
-    write (*, *) B(:, :)
     call rsg(n_basis, n_basis, H, B, eigen_values, 1, eigen_vectors, ierr)
 
     if (ierr /= 0) then
@@ -201,7 +201,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 2
+      n_basis = 10
     end if
 
     if (num_args >= 6) then
@@ -217,7 +217,7 @@ contains
       read (arg, *) r_max
     else
       write (*, *) "<r_max> not specified, using default value of 100.0"
-      r_max = 10.0
+      r_max = 100.0
     end if
 
   end subroutine read_input
@@ -227,15 +227,21 @@ contains
   ! end subroutine write_output
 
   ! display_vector
-  subroutine display_vector (n, x)
+  subroutine display_vector (n, x, dp)
     integer , intent(in) :: n
     double precision , intent(in) :: x(n)
-    integer :: ii
+    integer , optional , intent(in) :: dp
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero
+    integer :: ii
 
     ! determine real number formatting
-    d = 4
+    if (present(dp)) then
+      d = dp
+    else
+      d = dp_default
+    end if
+
     w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
@@ -260,15 +266,21 @@ contains
   end subroutine display_vector
 
   ! display_matrix
-  subroutine display_matrix (n_rows, n_cols, A)
+  subroutine display_matrix (n_rows, n_cols, A, dp)
     integer , intent(in) :: n_rows, n_cols
     double precision , intent(in) :: A(n_rows, n_cols)
-    integer :: ii, jj
+    integer , optional, intent(in) :: dp
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero
+    integer :: ii, jj
 
     ! determine real number formatting
-    d = 4
+    if (present(dp)) then
+      d = dp
+    else
+      d = dp_default
+    end if
+
     w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
@@ -295,15 +307,22 @@ contains
   end subroutine display_matrix
 
   ! display_radial_basis
-  subroutine display_radial_basis (n_r, n_basis, basis)
+  subroutine display_radial_basis (n_r, r_grid, n_basis, basis, dp)
     integer , intent(in) :: n_r, n_basis
+    double precision , intent(in) :: r_grid(n_r)
     double precision , intent(in) :: basis(n_r, n_basis)
-    integer :: ii, jj
+    integer , optional , intent(in) :: dp
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero
+    integer :: ii, jj
 
     ! determine real number formatting
-    d = 4
+    if (present(dp)) then
+      d = dp
+    else
+      d = dp_default
+    end if
+
     w = max(ceiling(log10(maxval(abs(basis(:, :))))), 1) + d + 3
 
     write (str_w, *) w
@@ -315,6 +334,7 @@ contains
 
     ! write out radial basis values
     do ii = 1, n_r
+      write (*, fmt, advance="no") r_grid(ii)
       do jj = 1, n_basis
         ! if basis(ii, jj) will be written as "0.00..0", replace with " .     "
         if (abs(basis(ii, jj)) > (10.0**(-d))) then
