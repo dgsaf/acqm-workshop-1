@@ -232,29 +232,36 @@ contains
     double precision , intent(in) :: r_grid(n_r)
     double precision , intent(in) :: basis(n_r, n_basis), &
         eigen_basis(n_r, n_basis)
-    character(len=1000) :: str_parameters
+    character(len=1000) :: output_dir
     character(len=1000) :: basis_filename, eigen_basis_filename
     character(len=50) :: str_l, str_m, str_alpha, str_atomic_charge
 
+    ! construct output directory for given parameters
     write (str_l, *) l
     write (str_m, *) m
     write (str_alpha, *) alpha
     write (str_atomic_charge, *) atomic_charge
 
-    write (str_parameters, *) &
+    write (output_dir, *) &
         "output/", &
         "l-", trim(adjustl(str_l)), ".", &
         "m-", trim(adjustl(str_m)), ".", &
         "alpha-", trim(adjustl(str_alpha)), ".", &
-        "atomic_charge-", trim(adjustl(str_atomic_charge))
+        "atomic_charge-", trim(adjustl(str_atomic_charge)) , "/"
 
+    call execute_command_line("mkdir -p "//trim(adjustl(output_dir)))
+
+    ! construct output filenames
     write (basis_filename, *) &
-        trim(adjustl(str_parameters)), ".basis.txt"
+        trim(adjustl(output_dir)), "basis.txt"
 
     write (eigen_basis_filename, *) &
-        trim(adjustl(str_parameters)), ".eigen_basis.txt"
+        trim(adjustl(output_dir)), "eigen_basis.txt"
 
+    ! write basis functions to file
     call write_basis(n_r, r_grid, n_basis, basis, basis_filename)
+
+    ! write eigen_basis functions to file
     call write_basis(n_r, r_grid, n_basis, eigen_basis, eigen_basis_filename)
 
   end subroutine write_output
