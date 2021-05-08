@@ -10,24 +10,24 @@ program hydrogenic_atom
 
   ! angular quantum number variables
   integer :: l, m
-  real :: alpha
+  double precision :: alpha
 
   ! atomic variables
   integer :: atomic_charge
 
   ! radial grid variables
   integer :: n_r
-  real :: d_r, r_max
-  real , allocatable :: r_grid(:)
+  double precision :: d_r, r_max
+  double precision , allocatable :: r_grid(:)
 
   ! basis variables
   integer :: n_basis
-  real , allocatable :: basis(:, :)
-  real , allocatable :: eigen_basis(:, :)
+  double precision , allocatable :: basis(:, :)
+  double precision , allocatable :: eigen_basis(:, :)
 
   ! matrices
-  real , allocatable :: B(:, :), K(:, :), V(:, :), H(:, :)
-  real , allocatable :: eigen_values(:), eigen_vectors(:, :)
+  double precision , allocatable :: B(:, :), K(:, :), V(:, :), H(:, :)
+  double precision , allocatable :: eigen_values(:), eigen_vectors(:, :)
 
   ! local variables
   integer :: ii
@@ -117,14 +117,14 @@ contains
   subroutine diagonalise (n_r, n_basis, basis, H, B, eigen_values, &
       eigen_vectors, eigen_basis)
     integer , intent(in) :: n_r, n_basis
-    real , intent(in) :: basis(n_r, n_basis)
-    real , intent(in) :: H(n_basis, n_basis), B(n_basis, n_basis)
-    real , intent(out) :: eigen_values(n_basis)
-    real , intent(out) :: eigen_vectors(n_basis, n_basis)
-    real , intent(out) :: eigen_basis(n_r, n_basis)
+    double precision , intent(in) :: basis(n_r, n_basis)
+    double precision , intent(in) :: H(n_basis, n_basis), B(n_basis, n_basis)
+    double precision , intent(out) :: eigen_values(n_basis)
+    double precision , intent(out) :: eigen_vectors(n_basis, n_basis)
+    double precision , intent(out) :: eigen_basis(n_r, n_basis)
     integer :: ii, jj, kk
     integer :: ierr
-    real :: temp_sum
+    double precision :: temp_sum
 
     ! solve eigenvalue matrix equation
     eigen_values(:) = 0.0
@@ -158,7 +158,7 @@ contains
   ! read_input
   subroutine read_input (l, m, alpha, atomic_charge, n_basis, d_r, r_max)
     integer , intent(out) :: l, m, atomic_charge, n_basis
-    real , intent(out) :: alpha, d_r, r_max
+    double precision , intent(out) :: alpha, d_r, r_max
     integer :: num_args
     character(len=20) :: arg
 
@@ -229,7 +229,7 @@ contains
   ! display_vector
   subroutine display_vector (n, x)
     integer , intent(in) :: n
-    real , intent(in) :: x(n)
+    double precision , intent(in) :: x(n)
     integer :: ii
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero
@@ -262,7 +262,7 @@ contains
   ! display_matrix
   subroutine display_matrix (n_rows, n_cols, A)
     integer , intent(in) :: n_rows, n_cols
-    real , intent(in) :: A(n_rows, n_cols)
+    double precision , intent(in) :: A(n_rows, n_cols)
     integer :: ii, jj
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero
@@ -297,7 +297,7 @@ contains
   ! display_radial_basis
   subroutine display_radial_basis (n_r, n_basis, basis)
     integer , intent(in) :: n_r, n_basis
-    real , intent(in) :: basis(n_r, n_basis)
+    double precision , intent(in) :: basis(n_r, n_basis)
     integer :: ii, jj
     integer :: w, d
     character(len=50) :: fmt, str_w, str_d, str_zero

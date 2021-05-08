@@ -18,11 +18,11 @@ contains
   ! k = 1, ..., n_basis, on the radial values specified in the grid.
   pure subroutine radial_basis (l, alpha, n_r, r_grid, n_basis, basis)
     integer , intent(in) :: l, n_r, n_basis
-    real , intent(in) :: alpha
-    real , intent(in) :: r_grid(n_r)
-    real , intent(out) :: basis(n_r, n_basis)
-    real :: norm(n_basis)
-    real :: alpha_grid(n_r)
+    double precision , intent(in) :: alpha
+    double precision , intent(in) :: r_grid(n_r)
+    double precision , intent(out) :: basis(n_r, n_basis)
+    double precision :: norm(n_basis)
+    double precision :: alpha_grid(n_r)
     integer :: kk
 
     ! in-lined array since r_grid(:) on its own is never used
@@ -71,7 +71,7 @@ contains
   ! these matrix elements.
   subroutine overlap_matrix(l, m, n_basis, B)
     integer , intent(in) :: l, m, n_basis
-    real , intent(out) :: B(n_basis, n_basis)
+    double precision , intent(out) :: B(n_basis, n_basis)
     integer :: kk
 
     ! initialise overlap matrix to zero
@@ -101,8 +101,8 @@ contains
   ! elements are zero when l' /= l or where m' /= m.
   subroutine kinetic_matrix(l, m, alpha, n_basis, K)
     integer , intent(in) :: l, m, n_basis
-    real , intent(in) :: alpha
-    real , intent(out) :: K(n_basis, n_basis)
+    double precision , intent(in) :: alpha
+    double precision , intent(out) :: K(n_basis, n_basis)
     integer :: kk
 
     ! initialise kinetic matrix to zero
@@ -132,8 +132,8 @@ contains
   ! elements are zero when l' /= l or where m' /= m.
   subroutine coulomb_matrix(l, m, alpha, n_basis, V)
     integer , intent(in) :: l, m, n_basis
-    real , intent(in) :: alpha
-    real , intent(out) :: V(n_basis, n_basis)
+    double precision , intent(in) :: alpha
+    double precision , intent(out) :: V(n_basis, n_basis)
     integer :: kk
 
     ! initialise coulomb matrix to zero
@@ -155,8 +155,8 @@ contains
   subroutine hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, &
       H)
     integer , intent(in) :: l, m, atomic_charge, n_basis
-    real , intent(in) :: alpha
-    real , intent(out) :: B(n_basis, n_basis), K(n_basis, n_basis), &
+    double precision , intent(in) :: alpha
+    double precision , intent(out) :: B(n_basis, n_basis), K(n_basis, n_basis), &
         V(n_basis, n_basis), H(n_basis, n_basis)
 
     call overlap_matrix(l, m, n_basis, B)
