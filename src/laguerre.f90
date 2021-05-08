@@ -39,17 +39,17 @@ contains
     if (n_basis >= 3) then
       do kk = 3, n_basis
         basis(:, kk) = ((2.0 * (kk - 1 + l - alpha_grid(:)) * basis(:, kk-1)) &
-            - (kk + (2 * l) - 1) * basis(:, kk-2)) / real(kk - 1)
+            - (kk + (2 * l) - 1) * basis(:, kk-2)) / dble(kk - 1)
       end do
     end if
 
     ! recurrence relation for basis normalisation constants
-    norm(1) = sqrt(alpha / real((l + 1) * gamma((2 * l) + 2.0)))
+    norm(1) = sqrt(alpha / dble((l + 1) * gamma((2 * l) + 2.0)))
 
     if (n_basis >= 2) then
       do kk = 2, n_basis
-        norm(kk) = norm(kk-1) * sqrt(real(kk * (kk + l)) / &
-            real((kk + l + 1) * (kk + (2 * l) + 1)))
+        norm(kk) = norm(kk-1) * sqrt(dble(kk * (kk + l)) / &
+            dble((kk + l + 1) * (kk + (2 * l) + 1)))
       end do
     end if
 
@@ -82,7 +82,7 @@ contains
       B(kk, kk) = 1.0
 
       B(kk, kk+1) = - 0.5 * sqrt(1 - &
-          (real(l * (l + 1)) / real((kk + l) * (kk + l + 1))))
+          (dble(l * (l + 1)) / dble((kk + l) * (kk + l + 1))))
 
       B(kk+1, kk) = B(kk, kk+1)
     end do
@@ -113,7 +113,7 @@ contains
       K(kk, kk) = 0.5 * (alpha ** 2)
 
       K(kk, kk+1) = (alpha ** 2) * 0.25 * sqrt(1 - &
-          (real(l * (l + 1)) / real((kk + l) * (kk + l + 1))))
+          (dble(l * (l + 1)) / dble((kk + l) * (kk + l + 1))))
 
       K(kk+1, kk) = K(kk, kk+1)
     end do
@@ -164,7 +164,7 @@ contains
     call kinetic_matrix(l, m, alpha, n_basis, K)
 
     call coulomb_matrix(l, m, alpha, n_basis, V)
-    V(:, :) = - real(atomic_charge) * V(:, :)
+    V(:, :) = - dble(atomic_charge) * V(:, :)
 
     H(:, :) = K(:, :) + V(:, :)
 

@@ -215,7 +215,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 30
+      n_basis = 10
     end if
 
     if (num_args >= 6) then
@@ -254,7 +254,7 @@ contains
     ! construct output directory for given parameters
     write (str_l, *) l
     write (str_m, *) m
-    write (str_alpha, *) alpha
+    write (str_alpha, "(f10.6)") alpha
     write (str_atomic_charge, *) atomic_charge
     write (str_n_basis, *) n_basis
 
@@ -379,7 +379,7 @@ contains
     character(len=50) :: fmt, str_w, str_d, str_zero
     integer :: ii
 
-    ! determine real number formatting
+    ! determine double precision number formatting
     if (present(dp)) then
       d = dp
     else
@@ -418,7 +418,7 @@ contains
     character(len=50) :: fmt, str_w, str_d, str_zero
     integer :: ii, jj
 
-    ! determine real number formatting
+    ! determine double precision number formatting
     if (present(dp)) then
       d = dp
     else
@@ -460,7 +460,7 @@ contains
     character(len=50) :: fmt, str_w, str_d, str_zero
     integer :: ii, jj
 
-    ! determine real number formatting
+    ! determine double precision number formatting
     if (present(dp)) then
       d = dp
     else
