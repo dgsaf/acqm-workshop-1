@@ -6,8 +6,10 @@ program hydrogenic_atom
   implicit none
 
   ! global flags
-  logical , parameter :: debugging = .true.
   integer , parameter :: dp_default = 4
+  logical , parameter :: debugging = .true.
+  logical , parameter :: display_bases = .false.
+  logical , parameter :: display_matrices = .true.
 
   ! angular quantum number variables
   integer :: l, m
@@ -59,7 +61,7 @@ program hydrogenic_atom
   ! calculate radial basis functions
   call radial_basis(l, alpha, n_r, r_grid, n_basis, basis)
 
-  if (debugging) then
+  if (display_bases) then
     write (*, *) "basis(n_r, n_basis)"
     call display_radial_basis(n_r, r_grid, n_basis, basis)
   end if
@@ -67,7 +69,7 @@ program hydrogenic_atom
   ! calculate matrix elements
   call hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, H)
 
-  if (debugging) then
+  if (display_matrices) then
     write (*, *) "B(n_basis, n_basis)"
     call display_matrix(n_basis, n_basis, B)
 
@@ -85,13 +87,15 @@ program hydrogenic_atom
   call diagonalise(n_r, n_basis, basis, B, H, eigen_values, eigen_vectors, &
       eigen_basis)
 
-  if (debugging) then
+  if (display_matrices) then
     write (*, *) "eigen_values(n_basis)"
     call display_vector(n_basis, eigen_values)
 
     write (*, *) "eigen_vectors(n_basis, n_basis)"
     call display_matrix(n_basis, n_basis, eigen_vectors)
+  end if
 
+  if (display_bases) then
     write (*, *) "eigen_basis(n_r, n_basis)"
     call display_radial_basis(n_r, r_grid, n_basis, eigen_basis)
   end if
@@ -211,7 +215,7 @@ contains
       read (arg, *) n_basis
     else
       write (*, *) "<n_basis> not specified, using default value of 10"
-      n_basis = 5
+      n_basis = 50
     end if
 
     if (num_args >= 6) then
