@@ -29,22 +29,23 @@ contains
     alpha_grid(:) = alpha * r_grid(:)
 
     ! recurrence relation for basis functions
-    basis(:, 1) = ((2.0 * alpha_grid(:)) ** (l + 1)) * &
+    basis(:, 1) = ((2.0d0 * alpha_grid(:)) ** (l + 1)) * &
         exp(-alpha_grid(:))
 
     if (n_basis >= 2) then
-      basis(:, 2) = 2.0 * (l + 1 - alpha_grid(:)) * basis(:, 1)
+      basis(:, 2) = 2.0d0 * (dble(l + 1) - alpha_grid(:)) * basis(:, 1)
     end if
 
     if (n_basis >= 3) then
       do kk = 3, n_basis
-        basis(:, kk) = ((2.0 * (kk - 1 + l - alpha_grid(:)) * basis(:, kk-1)) &
-            - (kk + (2 * l) - 1) * basis(:, kk-2)) / dble(kk - 1)
+        basis(:, kk) = &
+            ((2.0d0 * (dble(kk - 1 + l) - alpha_grid(:)) * basis(:, kk-1)) &
+            - dble(kk + (2 * l) - 1) * basis(:, kk-2)) / dble(kk - 1)
       end do
     end if
 
     ! recurrence relation for basis normalisation constants
-    norm(1) = sqrt(alpha / dble((l + 1) * gamma((2 * l) + 2.0)))
+    norm(1) = sqrt(alpha / dble((l + 1) * gamma((2 * l) + 2)))
 
     if (n_basis >= 2) then
       do kk = 2, n_basis
@@ -75,20 +76,20 @@ contains
     integer :: kk
 
     ! initialise overlap matrix to zero
-    B(:, :) = 0.0
+    B(:, :) = 0.0d0
 
     ! determine tri-diagonal overlap matrix elements
     do kk = 1, n_basis-1
-      B(kk, kk) = 1.0
+      B(kk, kk) = 1.0d0
 
-      B(kk, kk+1) = - 0.5 * sqrt(1 - &
+      B(kk, kk+1) = - 0.5d0 * sqrt(1 - &
           (dble(l * (l + 1)) / dble((kk + l) * (kk + l + 1))))
 
       B(kk+1, kk) = B(kk, kk+1)
     end do
 
     ! last term (not covered by loop)
-    B(n_basis, n_basis) = 1.0
+    B(n_basis, n_basis) = 1.0d0
 
   end subroutine overlap_matrix
 
@@ -106,20 +107,20 @@ contains
     integer :: kk
 
     ! initialise kinetic matrix to zero
-    K(:, :) = 0.0
+    K(:, :) = 0.0d0
 
     ! determine tri-diagonal kinetic matrix elements
     do kk = 1, n_basis-1
-      K(kk, kk) = 0.5 * (alpha ** 2)
+      K(kk, kk) = 0.5d0 * (alpha ** 2)
 
-      K(kk, kk+1) = (alpha ** 2) * 0.25 * sqrt(1 - &
+      K(kk, kk+1) = (alpha ** 2) * 0.25d0 * sqrt(1 - &
           (dble(l * (l + 1)) / dble((kk + l) * (kk + l + 1))))
 
       K(kk+1, kk) = K(kk, kk+1)
     end do
 
     ! last term (not covered by loop)
-    K(n_basis, n_basis) = 0.5 * (alpha ** 2)
+    K(n_basis, n_basis) = 0.5d0 * (alpha ** 2)
 
   end subroutine kinetic_matrix
 
@@ -137,11 +138,11 @@ contains
     integer :: kk
 
     ! initialise coulomb matrix to zero
-    V(:, :) = 0.0
+    V(:, :) = 0.0d0
 
     ! determine diagonal coulomb matrix elements
     do kk = 1, n_basis
-      V(kk, kk) = alpha / (kk + l)
+      V(kk, kk) = alpha / dble(kk + l)
     end do
 
   end subroutine coulomb_matrix
