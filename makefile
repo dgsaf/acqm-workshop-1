@@ -186,8 +186,13 @@ obj/laguerre.o : src/laguerre.f90
 	-J mod/
 
 #
-bin/hydrogenic_atom : src/hydrogenic_atom.f90 obj/rsg.o obj/laguerre.o
+obj/io.o : src/io.f90
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/io.f90 -o obj/io.o \
+	-J mod/
+
+#
+bin/hydrogenic_atom : src/hydrogenic_atom.f90 obj/rsg.o obj/laguerre.o obj/io.o
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/hydrogenic_atom.f90 \
 	-o obj/hydrogenic_atom.o -I mod/
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -o bin/hydrogenic_atom \
-	obj/hydrogenic_atom.o obj/rsg.o obj/laguerre.o
+	obj/hydrogenic_atom.o obj/rsg.o obj/laguerre.o obj/io.o
