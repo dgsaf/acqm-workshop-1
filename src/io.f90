@@ -17,6 +17,11 @@ contains
 
     num_args = command_argument_count()
 
+    if (num_args < 1) then
+      write (*, *) "arguments are: ",  &
+          "<l> <m> <alpha> <atomic_charge> <n_basis> <d_r> <r_max>"
+    end if
+
     if (num_args >= 1) then
       call get_command_argument(1, arg)
       read (arg, *) l

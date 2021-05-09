@@ -45,7 +45,7 @@ contains
     end if
 
     ! recurrence relation for basis normalisation constants
-    norm(1) = sqrt(alpha / dble((l + 1) * gamma((2 * l) + 2)))
+    norm(1) = sqrt(alpha / dble((l + 1) * gamma(dble((2 * l) + 2))))
 
     if (n_basis >= 2) then
       do kk = 2, n_basis
