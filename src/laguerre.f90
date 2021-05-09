@@ -16,14 +16,27 @@ contains
   !
   ! For given l, alpha, and r_grid, yields the functions varphi_{k, l}(r) for
   ! k = 1, ..., n_basis, on the radial values specified in the grid.
-  pure subroutine radial_basis (l, alpha, n_r, r_grid, n_basis, basis)
+  !
+  ! Also returns an error code <ierr> where:
+  ! - 0 indicates successful execution,
+  ! - 1 indicates invalid arguments.
+  pure subroutine radial_basis (l, alpha, n_r, r_grid, n_basis, basis, ierr)
     integer , intent(in) :: l, n_r, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(in) :: r_grid(n_r)
     double precision , intent(out) :: basis(n_r, n_basis)
+    integer , intent(out) :: ierr
     double precision :: norm(n_basis)
     double precision :: alpha_grid(n_r)
     integer :: kk
+
+    ! check if arguments are valid
+    ierr = 0
+
+    if ((l < 0) .or. (n_basis < 1) .or. (n_r < 1)) then
+      ierr = 1
+      return
+    end if
 
     ! in-lined array since r_grid(:) on its own is never used
     alpha_grid(:) = alpha * r_grid(:)
@@ -70,10 +83,23 @@ contains
   ! elements are zero when l' /= l or where m' /= m.
   ! Furthermore, the exponential decay variable, alpha, has no influence on
   ! these matrix elements.
-  subroutine overlap_matrix(l, m, n_basis, B)
+  !
+  ! Also returns an error code <ierr> where:
+  ! - 0 indicates successful execution,
+  ! - 1 indicates invalid arguments.
+  pure subroutine overlap_matrix(l, m, n_basis, B, ierr)
     integer , intent(in) :: l, m, n_basis
     double precision , intent(out) :: B(n_basis, n_basis)
+    integer , intent(out) :: ierr
     integer :: kk
+
+    ! check if arguments are valid
+    ierr = 0
+
+    if ((l < 0) .or. (n_basis < 1)) then
+      ierr = 1
+      return
+    end if
 
     ! initialise overlap matrix to zero
     B(:, :) = 0.0d0
@@ -100,11 +126,24 @@ contains
   ! Kinetic matrix elements for given l, m, alpha.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
-  subroutine kinetic_matrix(l, m, alpha, n_basis, K)
+  !
+  ! Also returns an error code <ierr> where:
+  ! - 0 indicates successful execution,
+  ! - 1 indicates invalid arguments.
+  pure subroutine kinetic_matrix(l, m, alpha, n_basis, K, ierr)
     integer , intent(in) :: l, m, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: K(n_basis, n_basis)
+    integer , intent(out) :: ierr
     integer :: kk
+
+    ! check if arguments are valid
+    ierr = 0
+
+    if ((l < 0) .or. (n_basis < 1)) then
+      ierr = 1
+      return
+    end if
 
     ! initialise kinetic matrix to zero
     K(:, :) = 0.0d0
@@ -131,11 +170,24 @@ contains
   ! Coulomb matrix elements for given l, m, alpha.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
-  subroutine coulomb_matrix(l, m, alpha, n_basis, V)
+  !
+  ! Also returns an error code <ierr> where:
+  ! - 0 indicates successful execution,
+  ! - 1 indicates invalid arguments.
+  pure subroutine coulomb_matrix(l, m, alpha, n_basis, V, ierr)
     integer , intent(in) :: l, m, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: V(n_basis, n_basis)
+    integer , intent(out) :: ierr
     integer :: kk
+
+    ! check if arguments are valid
+    ierr = 0
+
+    if ((l < 0) .or. (n_basis < 1)) then
+      ierr = 1
+      return
+    end if
 
     ! initialise coulomb matrix to zero
     V(:, :) = 0.0d0
@@ -153,18 +205,32 @@ contains
   ! alpha, atomic_charge; that is: B, K, V, H.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
-  subroutine hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, &
-      H)
+  !
+  ! Also returns an error code <ierr> where:
+  ! - 0 indicates successful execution,
+  ! - 1 indicates invalid arguments.
+  pure subroutine hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, &
+      K, V, H, ierr)
     integer , intent(in) :: l, m, atomic_charge, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: B(n_basis, n_basis), K(n_basis, n_basis), &
         V(n_basis, n_basis), H(n_basis, n_basis)
+    integer , intent(out) :: ierr
 
-    call overlap_matrix(l, m, n_basis, B)
+    ! check if arguments are valid
+    ierr = 0
 
-    call kinetic_matrix(l, m, alpha, n_basis, K)
+    if ((l < 0) .or. (n_basis < 1)) then
+      ierr = 1
+      return
+    end if
 
-    call coulomb_matrix(l, m, alpha, n_basis, V)
+    ! calculate matrices
+    call overlap_matrix(l, m, n_basis, B, ierr)
+
+    call kinetic_matrix(l, m, alpha, n_basis, K, ierr)
+
+    call coulomb_matrix(l, m, alpha, n_basis, V, ierr)
     V(:, :) = - dble(atomic_charge) * V(:, :)
 
     H(:, :) = K(:, :) + V(:, :)

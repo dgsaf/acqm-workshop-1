@@ -33,6 +33,7 @@ program hydrogenic_atom
   double precision , allocatable :: eigen_values(:), eigen_vectors(:, :)
 
   ! local variables
+  integer :: ierr
   integer :: ii
 
   ! read parameters from command line arguments
@@ -59,7 +60,12 @@ program hydrogenic_atom
   end do
 
   ! calculate radial basis functions
-  call radial_basis(l, alpha, n_r, r_grid, n_basis, basis)
+  call radial_basis(l, alpha, n_r, r_grid, n_basis, basis, ierr)
+
+  if (ierr /= 0) then
+    write (*, *) "radial_basis() failed with <ierr>: ", ierr
+    call exit(ierr)
+  end if
 
   if (display_bases) then
     write (*, *) "basis(n_r, n_basis)"
@@ -67,7 +73,13 @@ program hydrogenic_atom
   end if
 
   ! calculate matrix elements
-  call hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, H)
+  call hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, H, &
+      ierr)
+
+  if (ierr /= 0) then
+    write (*, *) "hydrogenic_matrices() failed with <ierr>: ", ierr
+    call exit(ierr)
+  end if
 
   if (display_matrices) then
     write (*, *) "B(n_basis, n_basis)"
@@ -148,7 +160,7 @@ contains
         ierr)
 
     if (ierr /= 0) then
-      write (*, "(a, i5)") "rsg failed with error code: ", ierr
+      write (*, *) "rsg() failed with <ierr>: ", ierr
       call exit(ierr)
     end if
 
