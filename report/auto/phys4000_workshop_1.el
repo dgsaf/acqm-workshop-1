@@ -11,7 +11,7 @@
    (LaTeX-add-labels
     "sec:introduction"
     "sec:laguerre-basis"
-    "sec:analyt-matr-elem"
+    "sec:kinet-energy-matr"
     "sec:extens-overl-matr"
     "sec:atom-hydr-stat"
     "sec:he+-ion"

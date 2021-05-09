@@ -24,30 +24,224 @@
 \section{Introduction}
 \label{sec:introduction}
 
+We consider the one-electron Hydrogenic-atom Hamiltonian, which is of the form
+\begin{equation*}
+  \hat{H}
+  \ket{\psi}
+  =
+  E
+  \ket{\psi}
+\end{equation*}
+where $\hat{H} = \hat{K} + \hat{V}$, with
+\begin{equation*}
+  \hat{K}
+  \ket{\psi}
+  =
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac{1}{2 r^{2}}
+    \hat{L}^{2}
+  }
+  \ket{\psi}
+  \qq{and}
+  \hat{V}
+  \ket{\psi}
+  =
+  -
+  \dfrac{Z}{r}
+  \ket{\psi}
+\end{equation*}
+and where $\hat{L} = \hat{L}_{x} + \hat{L}_{y} + \hat{L}_{z}$ is the angular
+momentum operator, which has eigenstates $\ket{Y_{\ell}^{m}}$ which satisfy
+\begin{equation*}
+  \hat{L}^{2}
+  \ket{Y_{\ell}^{m}}
+  =
+  \ell
+  \lr{\ell + 1}
+  \ket{Y_{\ell}^{m}}
+  \qq{and}
+  \hat{L}_{z}
+  \ket{Y_{\ell}^{m}}
+  =
+  m
+  \ket{Y_{\ell}^{m}}
+  .
+\end{equation*}
+We solve this system by the method of basis expansion, where we utilise a basis
+of the form, $\mathcal{B} = \lrset{\ket{\phi_{i}}}_{i = 1}^{N}$ which we suppose
+to be complete in the limit as $N \to \infty$.
+We select the basis functions, represented in coordinate-space, to be of the
+form
+\begin{equation*}
+  \phi_{i}\lr{r, \Omega}
+  =
+  \dfrac{1}{r}
+  \varphi_{k_{i}, \ell_{i}}\lr{r}
+  Y_{\ell_{i}}^{m_{i}}\lr{\Omega}
+  \qq{for}
+  i = 1, \dotsc, N.
+\end{equation*}
+For elements of this basis, the one-electron Hydrogenic-atom Hamiltonian assumes
+the form
+\begin{alignat*}{2}
+  \hat{H}
+  \ket{\phi_{i}}
+  {}={}
+  &
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac{1}{2 r^{2}}
+    \hat{L}^{2}
+    -
+    \dfrac{Z}{r}
+  }
+  \ket{\phi_{i}}
+  \\
+  {}={}
+  &
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac
+    {
+      \ell_{i}
+      \lr{\ell_{i} + 1}
+    }
+    {
+      2
+      r^{2}
+    }
+    -
+    \dfrac{Z}{r}
+  }
+  \ket{\phi_{i}}
+  \\
+  {}={}
+  &
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    +
+    \dfrac
+    {
+      \ell_{i}
+      \lr{\ell_{i} + 1}
+    }
+    {
+      2
+      r^{3}
+    }
+    -
+    \dfrac{Z}{r^{2}}
+  }
+  \ket{\varphi_{k_{i}, \ell_{i}}}
+  \otimes
+  \ket{Y_{\ell_{i}}^{m_{i}}}
+\end{alignat*}
+thus reducing to operator which acts purely to radial terms.
+
 \section{Laguerre Basis}
 \label{sec:laguerre-basis}
 
 % relevant theory and code
+We utilise a Laguerre basis for the set of radial functions which, in
+coordinate-space, are of the form
+\begin{equation*}
+  \varphi_{k, \ell}\lr{r}
+  =
+  N_{k, \ell}
+  \lr
+  {
+    2
+    \alpha
+    r
+  }^{\ell + 1}
+  \exponential\lr
+  {
+    -
+    \alpha
+    r
+  }
+  L_{k - 1}^{2 \ell + 1}\lr{2 \alpha r}
+\end{equation*}
+
 %% method to calculate normalisation constant without causing overflow errors
+
 %% bounds on k and l
 
+% figures: (4) different combinations of l, alpha, showing first (4) basis
+% functions
 
-\section{Analytical Matrix Elements}
-\label{sec:analyt-matr-elem}
+%% discuss effect of changing l, alpha
+
+%% choose appropriate r_max to show exponential decay
+
+\section{Kinetic Energy Matrix Elements}
+\label{sec:kinet-energy-matr}
+
+% derive kinetic energy matrix elements
 
 \subsection{Extension: Overlap Matrix Elements}
 \label{sec:extens-overl-matr}
 
+% derive overlap energy matrix elements
+
 \section{Atomic Hydrogen States}
 \label{sec:atom-hydr-stat}
+
+% figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence % of the
+% eigenvalues to the hydrogen energy spectrum
+
+% figure: for fixed n_basis and varying alpha, the behaviour of the eigenvalue
+% spectrum, and the consequences it could have on subsequent scattering
+% calculations
+
+% figures: for a satisfactory converged n_basis, a figure each for l = 0, l = 1,
+% comparing the first (3) bound states with analytical solutions
 
 \subsection{$\mathrm{He}^{+}$ Ion}
 \label{sec:he+-ion}
 
+% can you reproduce its analytical energies and wave functions?
+
 \subsection{Surface Plot in $xz$ Plane}
 \label{sec:surface-plot-xz}
 
+% figure: surface plot, for m = 0, in xz plane
+
 \subsection{Numerically Calculating Potential Matrix Elements}
 \label{sec:numer-calc-potent}
+
+% evaluate v matrix elements numerically, discuss how to avoid singularity at
+% origin
 
 \end{document}
