@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1295,7 +1295,14 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-) (./phys4000_workshop_1.aux)
+) (./phys4000_workshop_1.aux
+
+LaTeX Warning: Label `fig:laguerre-0-1.0' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:laguerre-0-1.0' multiply defined.
+
+)
 \openout1 = `phys4000_workshop_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -1495,66 +1502,85 @@ e/texmf/fonts/map/pdftex/updmap/pdftex.map}
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 593.
  (../src/laguerre.f90 [3])
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 626.
-
-
-(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
-exmf/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 626.
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
-sis.txt}
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
-sis.txt}
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
-sis.txt}
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
-sis.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
+PGFPlots: reading {../output/l-1.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/bas
+is.txt}
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 694.
+(hyperref)                removing `math shift' on input line 826.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 694.
+(hyperref)                removing `superscript' on input line 826.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 694.
+(hyperref)                removing `math shift' on input line 826.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 699.
+(hyperref)                removing `math shift' on input line 831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 699.
+(hyperref)                removing `math shift' on input line 831.
 
 No complaints by nag.
 [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 710.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 842.
  [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 710.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 842.
  (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 710.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 710.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 842.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 842.
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
 (rerunfilecheck)             Checksum: 9AEAB9DDEC920957BA890C39F4DE60B4;876.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 47183 strings out of 492616
- 1075538 string characters out of 6106108
- 2416105 words of memory out of 5000000
- 50322 multiletter control sequences out of 15000+600000
- 544381 words of font info for 87 fonts, out of 8000000 for 9000
+ 47246 strings out of 492616
+ 1076534 string characters out of 6106108
+ 2681967 words of memory out of 5000000
+ 50364 multiletter control sequences out of 15000+600000
+ 547022 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,19n,105p,792b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,21n,105p,792b,2353s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/l1iz05g9hz5h2nhnd6
 8a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfon
@@ -1564,28 +1590,40 @@ z05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type
 1/public/amsfonts/cm/cmmi12.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-te
 xlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
 /nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/te
-xmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63
+xmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/l1iz05g9hz5h2nhnd68a63
 acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-
-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/l1iz05g9h
+m/cmmi7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-
+2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></nix/store/l1iz05g9h
 z5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/publ
-ic/amsfonts/cm/cmr5.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-co
-mbined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/stor
-e/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n
--texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/shar
-e/texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/l1iz05g9hz5h2nhnd6
+ic/amsfonts/cm/cmmi9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-c
+ombined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/st
+ore/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxn
+n1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr5.
+pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/sha
+re/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/l1iz05g9hz5h2nhnd6
 8a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfon
-ts/cm/cmti9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-f
-ull-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb></nix/store/l1iz
-05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1
-/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texl
-ive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (5 pages, 205722 bytes).
+ts/cm/cmr7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-fu
+ll-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/l1iz05g
+9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-
+combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/
+store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5l
+xnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cms
+y9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/
+share/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></nix/store/l1iz05g9hz5h2n
+hnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/am
+sfonts/cm/cmti9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combin
+ed-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb></nix/store/
+l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/t
+ype1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-
+texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb
+>
+Output written on phys4000_workshop_1.pdf (5 pages, 312543 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
+ 269 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
  89 named destinations out of 1000 (max. 500000)
- 24685 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 28781 words of extra memory for PDF output out of 29859 (max. 10000000)
 

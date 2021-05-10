@@ -620,49 +620,181 @@ where $\mathrm{n_{r}}$ is the smallest integer such that
   .
 \end{equation*}
 The Laguerre basis functions have been calculated on this radial grid,
-for various $\ell$ and $\alpha$.
-The first four functions have been plotted for the following cases:
-\begin{itemize}
-\item The case of $\ell = 0$, $\alpha = 1.0$ is shown in
-  \autoref{fig:laguerre-0-1.0}.
-\end{itemize}
+for various values of $\ell$ and $\alpha$.
+The plots of the first 4 basis functions for these values of $\ell$ and $\alpha$
+are shown in \autoref{fig:laguerre}.
 
 \begin{figure}[h]
   \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      , scale = 1.5
-      , title = {Laguerre Radial Basis Functions [$\ell = 0$, $\alpha = 1.0$]}
-      , xlabel = {Radial Distance}
-      , ylabel = {}
-      , x unit = {a_{0}}
-      , y unit = {}
-      , grid = major
-      , legend entries
-      , legend style = {
-        cells = {anchor=east}
-        , legend pos = north east
-      }
-      , xmin = 0
-      , xmax = 20
-      ]
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 0$, $\alpha = 1.0$]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 20
+        , ymin = -0.75
+        , ymax = 0.75
+        ]
 
-      \pgfplotsforeachungrouped \n in {1, ..., 4} {
-        \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
-        \edef\temp{\noexpand%
-        \addplot [
-        color = red!\i!black
-        ] table [y index = \n]
-        {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/basis.txt};
-        }\temp
-        \addlegendentryexpanded{$\varphi_{\n, 0}\lr{r}$}
-      }
+        \pgfplotsforeachungrouped \n in {1, ..., 4} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\varphi_{\n, 0}\lr{r}$}
+        }
 
-    \end{axis}
-  \end{tikzpicture}
-  \caption{...}
-  \label{fig:laguerre-0-1.0}
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 1.0$.}
+    \label{fig:laguerre-0-1.0}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        scale = 0.75
+        , title = {[$\ell = 1$, $\alpha = 1.0$]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 20
+        , ymin = -0.75
+        , ymax = 0.75
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 4} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\varphi_{\n, 1}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 1.0$.}
+    \label{fig:laguerre-0-1.0}
+  \end{subfigure}
+
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 0$, $\alpha = 0.5$]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 30
+        , ymin = -0.75
+        , ymax = 0.75
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 4} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\varphi_{\n, 0}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 0.5$.}
+    \label{fig:laguerre-0-0.5}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 1$, $\alpha = 0.5$]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 30
+        , ymin = -0.75
+        , ymax = 0.75
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 4} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-1.m-0.alpha-0.5000.atomic_charge-1.n_basis-4/basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\varphi_{\n, 1}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 0.5$.}
+    \label{fig:laguerre-1-0.5}
+  \end{subfigure}
+
+  \caption{
+    The first four Laguerre radial basis functions are plotted for various cases
+    of $\ell$ and $\alpha$.
+    Note that every figure has the same y-axes bounds $\lrsq{-0.75, 0.75}$,
+    whereas the x-axes bounds are $\lrsq{0, 20}$ for the $\alpha = 1.0$ cases,
+    and $\lrset{0, 30}$ for the $\alpha = 0.5$ cases.
+    Observe that $\varphi_{k, \ell}\lr{r}$ has $k$ extremal points, with
+    each extrema being larger (in magnitude) than the preceeding extrema, before
+    eventually exhibiting exponential decay to 0, after the last extremal point.
+  }
+  \label{fig:laguerre}
 \end{figure}
+
 
 %% discuss effect of changing l, alpha
 
