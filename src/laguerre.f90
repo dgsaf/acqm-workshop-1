@@ -82,7 +82,7 @@ contains
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
   ! Furthermore, the exponential decay variable, alpha, has no influence on
-  ! these matrix elements.
+  ! these matrix elements, nor does the magnetic quantum number, m.
   !
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
@@ -126,6 +126,8 @@ contains
   ! Kinetic matrix elements for given l, m, alpha.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
+  ! Furthermore, the magnetic quantum number, m, has no influence on these
+  ! matrix elements.
   !
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
@@ -170,6 +172,8 @@ contains
   ! Coulomb matrix elements for given l, m, alpha.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
+  ! Furthermore, the magnetic quantum number, m, has no influence on these
+  ! matrix elements.
   !
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
@@ -205,6 +209,8 @@ contains
   ! alpha, atomic_charge; that is: B, K, V, H.
   ! We can restrict our attention to considering fixed l and m, since the matrix
   ! elements are zero when l' /= l or where m' /= m.
+  ! Furthermore, the magnetic quantum number, m, has no influence on these
+  ! matrix elements.
   !
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
