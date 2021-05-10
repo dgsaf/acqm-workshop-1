@@ -576,8 +576,8 @@ for $k = 2, 3, \dotsc$ and where $\ell \in \lrset{0, 1, \dotsc}$, and that
 yielding a numerically-stable recurrence relation for the normalisation
 constants as required.
 
-\subsection{Code}
-\label{sec:code}
+\subsection{Laguerre Radial Basis Code}
+\label{sec:lagu-radi-basis-code}
 
 FORTRAN code for calculating the Laguerre basis functions for a given radial
 grid can be found in
@@ -594,14 +594,45 @@ linerange={7-75}
 
 % figures: (4) different combinations of l, alpha, showing first (4) basis
 % functions
-Testing figures
+
+\subsection{Laguerre Radial Basis Figures}
+\label{sec:lagu-radi-basis-figs}
+
+A radial grid has been constructed, for given $\mathrm{d_{r}}$ and
+$\mathrm{r_{max}}$, of the form
+\begin{equation*}
+  \lrset
+  {
+    r_{i}
+    =
+    \mathrm{d_{r}}
+    \cdot
+    \lr{i - 1}
+  }_{i = 1}^{\mathrm{n_{r}}}
+\end{equation*}
+where $\mathrm{n_{r}}$ is the smallest integer such that
+\begin{equation*}
+  \mathrm{d_r}
+  \cdot
+  \lr {\mathrm{n_r} - 1}
+  \geq
+  \mathrm{r_{max}}
+  .
+\end{equation*}
+The Laguerre basis functions have been calculated on this radial grid,
+for various $\ell$ and $\alpha$.
+The first four functions have been plotted for the following cases:
+\begin{itemize}
+\item The case of $\ell = 0$, $\alpha = 1.0$ is shown in
+  \autoref{fig:laguerre-0-1.0}.
+\end{itemize}
 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
     \begin{axis}[
       , scale = 1.5
-      , title = {Plots}
+      , title = {Laguerre Radial Basis Functions [$\ell = 0$, $\alpha = 1.0$]}
       , xlabel = {Radial Distance}
       , ylabel = {}
       , x unit = {a_{0}}
@@ -624,11 +655,13 @@ Testing figures
         ] table [y index = \n]
         {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/basis.txt};
         }\temp
-        \addlegendentryexpanded{$k = \n$}
+        \addlegendentryexpanded{$\varphi_{\n, 0}\lr{r}$}
       }
 
     \end{axis}
   \end{tikzpicture}
+  \caption{...}
+  \label{fig:laguerre-0-1.0}
 \end{figure}
 
 %% discuss effect of changing l, alpha

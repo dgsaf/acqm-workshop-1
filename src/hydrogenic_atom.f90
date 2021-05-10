@@ -38,6 +38,18 @@ program hydrogenic_atom
 
   ! read parameters from command line arguments
   call read_input(l, m, alpha, atomic_charge, n_basis, d_r, r_max)
+
+  ! check if parameters are valid
+  if ((l < 0) .or. (abs(m) > l) &
+      .or. (alpha < 0.0d0) &
+      .or. (n_basis < 1) &
+      .or. (d_r < 0.0d0) .or. (r_max < 0.0d0)) then
+    ierr = 1
+    write (*, *) "parameters are invalid, failing with <ierr>: ", ierr
+    call exit(ierr)
+  end if
+
+  ! set n_r
   n_r = ceiling(r_max / d_r) + 1
 
   ! allocate arrays
