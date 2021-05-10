@@ -107,7 +107,7 @@ contains
     ! construct output directory for given parameters
     write (str_l, *) l
     write (str_m, *) m
-    write (str_alpha, "(f10.6)") alpha
+    write (str_alpha, "(f10.4)") alpha
     write (str_atomic_charge, *) atomic_charge
     write (str_n_basis, *) n_basis
 

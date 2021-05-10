@@ -38,7 +38,7 @@ program hydrogenic_atom
 
   ! read parameters from command line arguments
   call read_input(l, m, alpha, atomic_charge, n_basis, d_r, r_max)
-  n_r = ceiling(r_max / d_r)
+  n_r = ceiling(r_max / d_r) + 1
 
   ! allocate arrays
   allocate(r_grid(n_r))
@@ -56,7 +56,7 @@ program hydrogenic_atom
 
   ! initialise radial grid
   do ii = 1, n_r
-    r_grid(ii) = d_r * ii
+    r_grid(ii) = d_r * (ii - 1)
   end do
 
   ! calculate radial basis functions

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 15:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1495,44 +1495,58 @@ e/texmf/fonts/map/pdftex/updmap/pdftex.map}
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 593.
  (../src/laguerre.f90 [3])
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 628.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 628.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 628.
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
+sis.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
+sis.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
+sis.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ba
+sis.txt}
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 633.
+Package nag Warning: figure with no \caption on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 633.
+(hyperref)                removing `math shift' on input line 661.
 
-No complaints by nag.
-[4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 644.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 644.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 661.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 661.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 666.
+
+
+Package nag Warning: 1 complaints in total.
+
+[4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 677.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 677.
  (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 644.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 644.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 677.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 677.
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
 (rerunfilecheck)             Checksum: 6890FBE0206DDD02579B2CCEEDDA848D;775.
  ) 
 Here is how much of TeX's memory you used:
- 46640 strings out of 492616
- 1060526 string characters out of 6106108
- 1744528 words of memory out of 5000000
- 49790 multiletter control sequences out of 15000+600000
+ 47158 strings out of 492616
+ 1074986 string characters out of 6106108
+ 2414846 words of memory out of 5000000
+ 50303 multiletter control sequences out of 15000+600000
  544330 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,14n,105p,792b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,19n,105p,792b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/l1iz05g9hz5h2nhnd6
 8a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfon
@@ -1559,10 +1573,10 @@ nts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined
 -full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1i
 z05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type
 1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (4 pages, 179165 bytes).
+Output written on phys4000_workshop_1.pdf (5 pages, 194849 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
  24677 words of extra memory for PDF output out of 24883 (max. 10000000)
 

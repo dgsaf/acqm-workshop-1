@@ -594,12 +594,39 @@ linerange={7-75}
 
 % figures: (4) different combinations of l, alpha, showing first (4) basis
 % functions
+Testing figures
 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[]
-      \addplot[] table [y index = 2]
+    \begin{axis}[
+      , scale = 1.5
+      , title = {Plots}
+      , xlabel = {Radial Distance}
+      , ylabel = {}
+      , x unit = {a_{0}}
+      , y unit = {}
+      , grid = major
+      , legend entries
+      , legend style = {
+        cells = {anchor=east}
+        , legend pos = north east
+      }
+      , xmin = 0
+      , xmax = 20
+      ]
+
+      \pgfplotsforeachungrouped \n in {1, ..., 4} {
+        \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(4 - 1)}
+        \edef\temp{\noexpand%
+        \addplot [
+        color = red!\i!black
+        ] table [y index = \n]
+        {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/basis.txt};
+        }\temp
+        \addlegendentryexpanded{$k = \n$}
+      }
+
     \end{axis}
   \end{tikzpicture}
 \end{figure}
