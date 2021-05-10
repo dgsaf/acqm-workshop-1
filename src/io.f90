@@ -17,7 +17,7 @@ contains
 
     num_args = command_argument_count()
 
-    if (num_args < 1) then
+    if (num_args < 7) then
       write (*, *) "arguments are: ",  &
           "<l> <m> <alpha> <atomic_charge> <n_basis> <d_r> <r_max>"
     end if
@@ -26,7 +26,7 @@ contains
       call get_command_argument(1, arg)
       read (arg, *) l
     else
-      write (*, *) "<l> not specified, using default value of 0"
+      write (*, *) "> <l> not specified, using default value of 0"
       l = 0
     end if
 
@@ -34,7 +34,7 @@ contains
       call get_command_argument(2, arg)
       read (arg, *) m
     else
-      write (*, *) "<m> not specified, using default value of 0"
+      write (*, *) "> <m> not specified, using default value of 0"
       m = 0
     end if
 
@@ -42,15 +42,15 @@ contains
       call get_command_argument(3, arg)
       read (arg, *) alpha
     else
-      write (*, *) "<alpha> not specified, using default value of 1.0"
-      alpha = 1.0
+      write (*, *) "> <alpha> not specified, using default value of 1.0"
+      alpha = 1.0d0
     end if
 
     if (num_args >= 4) then
       call get_command_argument(4, arg)
       read (arg, *) atomic_charge
     else
-      write (*, *) "<atomic_charge> not specified, using default value of 1"
+      write (*, *) "> <atomic_charge> not specified, using default value of 1"
       atomic_charge = 1
     end if
 
@@ -58,7 +58,7 @@ contains
       call get_command_argument(5, arg)
       read (arg, *) n_basis
     else
-      write (*, *) "<n_basis> not specified, using default value of 10"
+      write (*, *) "> <n_basis> not specified, using default value of 10"
       n_basis = 10
     end if
 
@@ -66,17 +66,26 @@ contains
       call get_command_argument(6, arg)
       read (arg, *) d_r
     else
-      write (*, *) "<d_r> not specified, using default value of 0.1"
-      d_r = 0.1
+      write (*, *) "> <d_r> not specified, using default value of 0.1"
+      d_r = 0.1d0
     end if
 
     if (num_args >= 7) then
       call get_command_argument(7, arg)
       read (arg, *) r_max
     else
-      write (*, *) "<r_max> not specified, using default value of 100.0"
-      r_max = 100.0
+      write (*, *) "> <r_max> not specified, using default value of 100.0"
+      r_max = 100.0d0
     end if
+
+    write (*, *) "parameters: "
+    write (*, *) "> <l>:             ", l
+    write (*, *) "> <m>:             ", m
+    write (*, *) "> <alpha>:         ", alpha
+    write (*, *) "> <atomic_charge>: ", atomic_charge
+    write (*, *) "> <n_basis>:       ", n_basis
+    write (*, *) "> <d_r>:           ", d_r
+    write (*, *) "> <r_max>:         ", r_max
 
   end subroutine read_input
 

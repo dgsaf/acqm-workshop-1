@@ -7,9 +7,9 @@ d_r=0.1
 r_max=100.0
 
 # parameter sets
-n_basis_set="1 2 4 8 16 32 64"
+n_basis_set="1 2 4 8 16 32 64 128"
 l_set="0 1 2 3"
-alpha_set="0.75 1.0 1.25"
+alpha_set="0.5 0.75 1.0 1.25 1.5"
 
 # compile
 make hydrogenic_atom

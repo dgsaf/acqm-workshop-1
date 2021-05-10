@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  10 MAY 2021 14:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1559,7 +1559,7 @@ nts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined
 -full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1i
 z05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type
 1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (4 pages, 179180 bytes).
+Output written on phys4000_workshop_1.pdf (4 pages, 179165 bytes).
 PDF statistics:
  227 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

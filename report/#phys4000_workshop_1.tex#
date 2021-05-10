@@ -599,7 +599,7 @@ linerange={7-75}
   \centering
   \begin{tikzpicture}
     \begin{axis}[]
-      \addplot[] table [y index = 2]
+      \addplot[] table [y index = 2] {output/}
     \end{axis}
   \end{tikzpicture}
 \end{figure}
