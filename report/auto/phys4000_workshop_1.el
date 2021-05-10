@@ -1,21 +1,24 @@
 (TeX-add-style-hook
  "phys4000_workshop_1"
  (lambda ()
-   (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "draft")))
    (TeX-run-style-hooks
     "latex2e"
     "article"
     "art10"
-    "base")
+    "base"
+    "color"
+    "listings")
    (LaTeX-add-labels
     "sec:introduction"
     "sec:laguerre-basis"
+    "sec:recurrence-relation"
+    "sec:norm-const"
+    "sec:code"
     "sec:kinet-energy-matr"
     "sec:extens-overl-matr"
     "sec:atom-hydr-stat"
-    "sec:he+-ion"
-    "sec:surface-plot-xz"
-    "sec:numer-calc-potent"))
+    "sec:extens-he+-ion"
+    "sec:extens-surface-plot-xz"
+    "sec:extens-numer-calc-potent"))
  :latex)
 

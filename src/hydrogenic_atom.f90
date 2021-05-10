@@ -153,8 +153,8 @@ contains
     H_copy(:, :) = H(:, :)
 
     ! solve eigenvalue matrix equation
-    eigen_values(:) = 0.0
-    eigen_vectors(:, :) = 0.0
+    eigen_values(:) = 0.0d0
+    eigen_vectors(:, :) = 0.0d0
 
     call rsg(n_basis, n_basis, H_copy, B_copy, eigen_values, 1, eigen_vectors, &
         ierr)
@@ -165,11 +165,11 @@ contains
     end if
 
     ! calculate eigen-basis
-    eigen_basis(:, :) = 0.0
+    eigen_basis(:, :) = 0.0d0
 
     do jj = 1, n_basis
       do ii = 1, n_r
-        temp_sum = 0.0
+        temp_sum = 0.0d0
 
         do kk = 1, n_basis
           temp_sum = temp_sum + (eigen_vectors(kk, jj) * basis(ii, kk))

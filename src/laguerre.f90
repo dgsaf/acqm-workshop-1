@@ -38,6 +38,16 @@ contains
       return
     end if
 
+    ! recurrence relation for basis normalisation constants
+    norm(1) = sqrt(alpha / dble((l + 1) * gamma(dble((2 * l) + 2))))
+
+    if (n_basis >= 2) then
+      do kk = 2, n_basis
+        norm(kk) = norm(kk-1) * sqrt(dble((kk - 1) * (kk - 1 + l)) / &
+            dble((kk + l) * (kk + (2 * l))))
+      end do
+    end if
+
     ! in-lined array since r_grid(:) on its own is never used
     alpha_grid(:) = alpha * r_grid(:)
 
@@ -54,16 +64,6 @@ contains
         basis(:, kk) = &
             ((2.0d0 * (dble(kk - 1 + l) - alpha_grid(:)) * basis(:, kk-1)) &
             - dble(kk + (2 * l) - 1) * basis(:, kk-2)) / dble(kk - 1)
-      end do
-    end if
-
-    ! recurrence relation for basis normalisation constants
-    norm(1) = sqrt(alpha / dble((l + 1) * gamma(dble((2 * l) + 2))))
-
-    if (n_basis >= 2) then
-      do kk = 2, n_basis
-        norm(kk) = norm(kk-1) * sqrt(dble(kk * (kk + l)) / &
-            dble((kk + l + 1) * (kk + (2 * l) + 1)))
       end do
     end if
 
