@@ -7,6 +7,8 @@
   - `mod/`
   - `bin/`
   - `output/`
+  - `makefile`
+  - `jobs.sh`
 
 ## Compilation
   To compile the code:
