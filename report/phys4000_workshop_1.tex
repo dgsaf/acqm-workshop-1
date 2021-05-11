@@ -347,18 +347,18 @@ following form in coordinate-space
   \lr
   {
     2
-    \alpha
+    \alpha_{\ell}
     r
   }^{\ell + 1}
   \exponential\lr
   {
     -
-    \alpha
+    \alpha_{\ell}
     r
   }
-  L_{k - 1}^{2 \ell + 1}\lr{2 \alpha r}
+  L_{k - 1}^{2 \ell + 1}\lr{2 \alpha_{\ell} r}
 \end{equation*}
-where $\alpha \in (0, \infty)$ is an arbitrarily chosen constant,
+where $\alpha_{\ell} \in (0, \infty)$ is an arbitrarily chosen constant,
 where $N_{k, \ell}$ are the normalisation constants, given by
 \begin{equation*}
   N_{k, \ell}
@@ -367,7 +367,7 @@ where $N_{k, \ell}$ are the normalisation constants, given by
   {
     \dfrac
     {
-      \alpha
+      \alpha_{\ell}
       \lr{k - 1}!
     }
     {
@@ -430,13 +430,13 @@ whence we note that
   \lr
   {
     2
-    \alpha
+    \alpha_{\ell}
     r
   }^{\ell + 1}
   \exponential\lr
   {
     -
-    \alpha
+    \alpha_{\ell}
     r
   }
   \\
@@ -450,19 +450,19 @@ whence we note that
     +
     1
     -
-    \alpha
+    \alpha_{\ell}
     r
   }
   \lr
   {
     2
-    \alpha
+    \alpha_{\ell}
     r
   }^{\ell + 1}
   \exponential\lr
   {
     -
-    \alpha
+    \alpha_{\ell}
     r
   }
   \\
@@ -479,7 +479,7 @@ whence we note that
     +
     \ell
     -
-    \alpha
+    \alpha_{\ell}
     r
   }
   \widetilde{\varphi}_{k - 1, \ell}\lr{r}
@@ -513,7 +513,7 @@ We note that
   {
     \dfrac
     {
-      \alpha
+      \alpha_{\ell}
       \lr{k - 1}!
     }
     {
@@ -537,7 +537,7 @@ We note that
     }
     \dfrac
     {
-      \alpha
+      \alpha_{\ell}
       \lr{k - 2}!
     }
     {
@@ -570,7 +570,7 @@ for $k = 2, 3, \dotsc$ and where $\ell \in \lrset{0, 1, \dotsc}$, and that
   {
     \dfrac
     {
-      \alpha
+      \alpha_{\ell}
     }
     {
       \lr{\ell + 1}
@@ -625,9 +625,9 @@ where $\mathrm{n_{r}}$ is the smallest integer such that
   .
 \end{equation*}
 The Laguerre basis functions have been calculated on this radial grid,
-for various values of $\ell$ and $\alpha$.
-The plots of the first 4 basis functions for these values of $\ell$ and $\alpha$
-are shown in \autoref{fig:laguerre}.
+for various values of $\ell$ and $\alpha_{\ell}$.
+The plots of the first 4 basis functions for these values of $\ell$ and
+$\alpha_{\ell}$ are shown in \autoref{fig:laguerre}.
 
 \begin{figure}[h]
   \centering
@@ -635,7 +635,7 @@ are shown in \autoref{fig:laguerre}.
     \begin{tikzpicture}
       \begin{axis}[
         , scale = 0.75
-        , title = {[$\ell = 0$, $\alpha = 1.0$]}
+        , title = {[$\ell = 0$, $\alpha_{\ell} = 1.0$]}
         , xlabel = {Radial Distance}
         , ylabel = {}
         , x unit = {a_{0}}
@@ -666,7 +666,10 @@ are shown in \autoref{fig:laguerre}.
 
       \end{axis}
     \end{tikzpicture}
-    \caption{$\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 1.0$.}
+    \caption
+    {
+      $\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha_{\ell} = 1.0$.
+    }
     \label{fig:laguerre-0-1.0}
   \end{subfigure}
   %
@@ -674,7 +677,7 @@ are shown in \autoref{fig:laguerre}.
     \begin{tikzpicture}
       \begin{axis}[
         scale = 0.75
-        , title = {[$\ell = 1$, $\alpha = 1.0$]}
+        , title = {[$\ell = 1$, $\alpha_{\ell} = 1.0$]}
         , xlabel = {Radial Distance}
         , ylabel = {}
         , x unit = {a_{0}}
@@ -705,7 +708,10 @@ are shown in \autoref{fig:laguerre}.
 
       \end{axis}
     \end{tikzpicture}
-    \caption{$\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 1.0$.}
+    \caption
+    {
+      $\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha_{\ell} = 1.0$.
+    }
     \label{fig:laguerre-0-1.0}
   \end{subfigure}
 
@@ -713,7 +719,7 @@ are shown in \autoref{fig:laguerre}.
     \begin{tikzpicture}
       \begin{axis}[
         , scale = 0.75
-        , title = {[$\ell = 0$, $\alpha = 0.5$]}
+        , title = {[$\ell = 0$, $\alpha_{\ell} = 0.5$]}
         , xlabel = {Radial Distance}
         , ylabel = {}
         , x unit = {a_{0}}
@@ -744,7 +750,10 @@ are shown in \autoref{fig:laguerre}.
 
       \end{axis}
     \end{tikzpicture}
-    \caption{$\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 0.5$.}
+    \caption
+    {
+      $\varphi_{k, 0}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha_{\ell} = 0.5$.
+    }
     \label{fig:laguerre-0-0.5}
   \end{subfigure}
   %
@@ -752,7 +761,7 @@ are shown in \autoref{fig:laguerre}.
     \begin{tikzpicture}
       \begin{axis}[
         , scale = 0.75
-        , title = {[$\ell = 1$, $\alpha = 0.5$]}
+        , title = {[$\ell = 1$, $\alpha_{\ell} = 0.5$]}
         , xlabel = {Radial Distance}
         , ylabel = {}
         , x unit = {a_{0}}
@@ -783,16 +792,19 @@ are shown in \autoref{fig:laguerre}.
 
       \end{axis}
     \end{tikzpicture}
-    \caption{$\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha = 0.5$.}
+    \caption
+    {
+      $\varphi_{k, 1}\lr{r}$ for $k = 1, 2, 3, 4$, with $\alpha_{\ell} = 0.5$.
+    }
     \label{fig:laguerre-1-0.5}
   \end{subfigure}
 
   \caption{
     The first four Laguerre radial basis functions are plotted for various cases
-    of $\ell$ and $\alpha$.
+    of $\ell$ and $\alpha_{\ell}$.
     Note that every figure has the same y-axes bounds $\lrsq{-0.75, 0.75}$,
-    whereas the x-axes bounds are $\lrsq{0, 20}$ for the $\alpha = 1.0$ cases,
-    and $\lrset{0, 30}$ for the $\alpha = 0.5$ cases.
+    whereas the x-axes bounds are $\lrsq{0, 20}$ for the $\alpha_{\ell} = 1.0$ cases,
+    and $\lrset{0, 30}$ for the $\alpha_{\ell} = 0.5$ cases.
     Observe that $\varphi_{k, \ell}\lr{r}$ has $k$ extremal points, with
     each extrema being larger (in magnitude) than the preceeding extrema, before
     eventually exhibiting exponential decay to 0, after the last extremal point.

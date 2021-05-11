@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  11 MAY 2021 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  11 MAY 2021 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1528,43 +1528,43 @@ Writing 'phys4000_workshop_1-figure3' to 'phys4000_workshop_1.makefile'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-Overfull \hbox (23.35106pt too wide) detected at line 1256
+Overfull \hbox (23.35106pt too wide) detected at line 1268
 []
  []
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1507.
+(hyperref)                removing `math shift' on input line 1519.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1507.
+(hyperref)                removing `superscript' on input line 1519.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1507.
+(hyperref)                removing `math shift' on input line 1519.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1512.
+(hyperref)                removing `math shift' on input line 1524.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1512.
+(hyperref)                removing `math shift' on input line 1524.
 
 No complaints by nag.
 [6]
 ===== mode=`list and make': Use 'make -f phys4000_workshop_1.makefile' to gener
 ate all images. Then, re-run (pdf)latex phys4000_workshop_1. =====
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1523.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1535.
 [7 <./phys4000_workshop_1-figure0.pdf> <./phys4000_workshop_1-figure1.pdf> <./p
 hys4000_workshop_1-figure2.pdf> <./phys4000_workshop_1-figure3.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1523.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1535.
 
 (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1523.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1535.
 
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
 (rerunfilecheck)             Checksum: 9AEAB9DDEC920957BA890C39F4DE60B4;876.
@@ -1574,11 +1574,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 47032 strings out of 492616
- 1072827 string characters out of 6106108
+ 47030 strings out of 492616
+ 1072811 string characters out of 6106108
  1755682 words of memory out of 5000000
  50136 multiletter control sequences out of 15000+600000
- 547073 words of font info for 103 fonts, out of 8000000 for 9000
+ 547022 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,14n,105p,792b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
@@ -1620,7 +1620,7 @@ l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/t
 ype1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-
 texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb
 >
-Output written on phys4000_workshop_1.pdf (7 pages, 335632 bytes).
+Output written on phys4000_workshop_1.pdf (7 pages, 335674 bytes).
 PDF statistics:
  367 PDF objects out of 1000 (max. 8388607)
  326 compressed objects within 4 object streams
