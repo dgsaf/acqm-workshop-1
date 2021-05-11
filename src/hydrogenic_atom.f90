@@ -9,7 +9,7 @@ program hydrogenic_atom
   ! global flags
   logical , parameter :: debugging = .true.
   logical , parameter :: display_bases = .false.
-  logical , parameter :: display_matrices = .false.
+  logical , parameter :: display_matrices = .true.
 
   ! angular quantum number variables
   integer :: l, m

@@ -232,11 +232,11 @@ contains
     end if
 
     ! calculate matrices
-    call overlap_matrix(l, m, n_basis, B, ierr)
+    call overlap_matrix(l, n_basis, B, ierr)
 
-    call kinetic_matrix(l, m, alpha, n_basis, K, ierr)
+    call kinetic_matrix(l, alpha, n_basis, K, ierr)
 
-    call coulomb_matrix(l, m, alpha, n_basis, V, ierr)
+    call coulomb_matrix(l, alpha, n_basis, V, ierr)
     V(:, :) = - dble(atomic_charge) * V(:, :)
 
     H(:, :) = K(:, :) + V(:, :)
