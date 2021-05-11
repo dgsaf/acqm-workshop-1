@@ -85,8 +85,7 @@ program hydrogenic_atom
   end if
 
   ! calculate matrix elements
-  call hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, K, V, H, &
-      ierr)
+  call hydrogenic_matrices(l, alpha, atomic_charge, n_basis, B, K, V, H, ierr)
 
   if (ierr /= 0) then
     write (*, *) "hydrogenic_matrices() failed with <ierr>: ", ierr

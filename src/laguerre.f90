@@ -87,8 +87,8 @@ contains
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
   ! - 1 indicates invalid arguments.
-  pure subroutine overlap_matrix(l, m, n_basis, B, ierr)
-    integer , intent(in) :: l, m, n_basis
+  pure subroutine overlap_matrix(l, n_basis, B, ierr)
+    integer , intent(in) :: l, n_basis
     double precision , intent(out) :: B(n_basis, n_basis)
     integer , intent(out) :: ierr
     integer :: kk
@@ -132,8 +132,8 @@ contains
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
   ! - 1 indicates invalid arguments.
-  pure subroutine kinetic_matrix(l, m, alpha, n_basis, K, ierr)
-    integer , intent(in) :: l, m, n_basis
+  pure subroutine kinetic_matrix(l, alpha, n_basis, K, ierr)
+    integer , intent(in) :: l, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: K(n_basis, n_basis)
     integer , intent(out) :: ierr
@@ -178,8 +178,8 @@ contains
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
   ! - 1 indicates invalid arguments.
-  pure subroutine coulomb_matrix(l, m, alpha, n_basis, V, ierr)
-    integer , intent(in) :: l, m, n_basis
+  pure subroutine coulomb_matrix(l, alpha, n_basis, V, ierr)
+    integer , intent(in) :: l, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: V(n_basis, n_basis)
     integer , intent(out) :: ierr
@@ -215,9 +215,9 @@ contains
   ! Also returns an error code <ierr> where:
   ! - 0 indicates successful execution,
   ! - 1 indicates invalid arguments.
-  pure subroutine hydrogenic_matrices(l, m, alpha, atomic_charge, n_basis, B, &
+  pure subroutine hydrogenic_matrices(l, alpha, atomic_charge, n_basis, B, &
       K, V, H, ierr)
-    integer , intent(in) :: l, m, atomic_charge, n_basis
+    integer , intent(in) :: l, atomic_charge, n_basis
     double precision , intent(in) :: alpha
     double precision , intent(out) :: B(n_basis, n_basis), K(n_basis, n_basis), &
         V(n_basis, n_basis), H(n_basis, n_basis)
