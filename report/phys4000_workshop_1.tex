@@ -1586,6 +1586,24 @@ linerange={206-244}
 , label={lst:laguerre_hydrogenic}
 ]{../src/laguerre.f90}
 
+\subsubsection{Hydrogenic Atom Program}
+\label{sec:hydr-atom-progr}
+
+A FORTRAN program which calculates the pseudo-energies and pseudo-states of a
+one-electron Hydrogenic-atom Hamiltonian by the method of basis expansion,
+using the Laguerre radial basis, for given
+$(\ell, m, \alpha_{\ell}, Z, \mathrm{n_{basis}}, \mathrm{d_{r}},
+\mathrm{r_{max}})$, can be found in
+\lstinline[style=ff]{src/hydrogenic_atom.f90}
+and is shown in \autoref{lst:hydrogenic_atom}.
+
+\lstinputlisting[
+, caption={Calculation of pseudo-energies and pseudo-states of a one-electron
+  Hydrogenic-atom Hamiltonian by the method of basis expansion, using the
+  Laguerre radial basis.}
+, label={lst:hydrogenic_atom}
+]{../src/hydrogenic_atom.f90}
+
 % figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence % of the
 % eigenvalues to the hydrogen energy spectrum
 

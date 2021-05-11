@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  11 MAY 2021 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  11 MAY 2021 17:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1538,60 +1538,53 @@ Overfull \hbox (23.35106pt too wide) detected at line 1278
 [6
 
 ] [7] (../src/laguerre.f90) [8] (../src/laguerre.f90) [9]
-(../src/laguerre.f90)
-
-LaTeX Warning: Reference `lst:laguerre_hydrogenic' on page 10 undefined on inpu
-t line 1579.
-
-(../src/laguerre.f90 [10])
+(../src/laguerre.f90) (../src/laguerre.f90 [10]) (../src/hydrogenic_atom.f90
+[11] [12] [13] [14])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1599.
+(hyperref)                removing `math shift' on input line 1617.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1599.
+(hyperref)                removing `superscript' on input line 1617.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1599.
+(hyperref)                removing `math shift' on input line 1617.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1604.
+(hyperref)                removing `math shift' on input line 1622.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1604.
+(hyperref)                removing `math shift' on input line 1622.
 
 No complaints by nag.
-[11]
+[15]
 ===== mode=`list and make': Use 'make -f phys4000_workshop_1.makefile' to gener
 ate all images. Then, re-run (pdf)latex phys4000_workshop_1. =====
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1615.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1615.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1633.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1633.
 (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1615.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1633.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1633.
 
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
-(rerunfilecheck)             Checksum: 64F1BA529E13FC159CFF78E1A3D2F381;1299.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 43F445A94575D378398BF157C2919DD9;1382.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 47255 strings out of 492616
- 1076152 string characters out of 6106108
+ 47490 strings out of 492616
+ 1079516 string characters out of 6106108
  1755682 words of memory out of 5000000
- 50162 multiletter control sequences out of 15000+600000
- 547693 words of font info for 109 fonts, out of 8000000 for 9000
+ 50187 multiletter control sequences out of 15000+600000
+ 547903 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,14n,105p,792b,2267s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,14n,105p,792b,2268s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/l1iz05g9hz5h2nhnd6
 8a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfon
@@ -1632,10 +1625,10 @@ ype1/public/amsfonts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n
 -texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pf
 b></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (11 pages, 380329 bytes).
+Output written on phys4000_workshop_1.pdf (15 pages, 405255 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 585 compressed objects within 6 object streams
- 269 named destinations out of 1000 (max. 500000)
- 29353 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 896 PDF objects out of 1000 (max. 8388607)
+ 841 compressed objects within 9 object streams
+ 470 named destinations out of 1000 (max. 500000)
+ 29361 words of extra memory for PDF output out of 29859 (max. 10000000)
 

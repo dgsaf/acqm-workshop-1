@@ -30,6 +30,7 @@
     "sec:kinet-energy-matr-1"
     "sec:coulomb-potential-matr"
     "sec:hamilt-matr-elem"
+    "sec:hydr-atom-progr"
     "sec:extens-he+-ion"
     "sec:extens-surface-plot-xz"
     "sec:extens-numer-calc-potent")
