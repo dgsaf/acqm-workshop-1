@@ -5,6 +5,8 @@
 
 % - Plotting
 \usepgfplotslibrary{units}
+\usetikzlibrary{external}
+\tikzexternalize[mode=list and make]
 
 % - Listings
 \usepackage{color}
@@ -209,9 +211,12 @@ the form
     -
     \dfrac{Z}{r}
   }
-  \ket{\tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}}
-  \otimes
-  \ket{Y_{\ell_{i}}^{m_{i}}}
+  \ket
+  {
+    \tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}
+    ,
+    Y_{\ell_{i}}^{m_{i}}
+  }
 \end{alignat*}
 thus reducing to operator which acts purely to radial terms, indexed by
 $\ell_{i}$.
@@ -298,17 +303,17 @@ by $\ell$, we have that
   \\
   {}={}
   &
-  \bra{\varphi_{k_{i}, \ell_{i}}}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}}
   \hat{A}_{\ell_{j}}
-  \ket{\varphi_{k_{j}, \ell_{j}}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell_{j}}}
   \delta_{\ell_{i}, \ell_{j}}
   \delta_{m_{i}, m_{j}}
 \end{alignat*}
 where we have defined the radial inner product to be of the form
 \begin{equation*}
-  \bra{\varphi_{k_{i}, \ell_{i}}}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}}
   \hat{A}_{\ell_{j}}
-  \ket{\varphi_{k_{j}, \ell_{j}}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell_{j}}}
   =
   \int_{0}^{\infty}
   \dd{r}
@@ -795,15 +800,691 @@ are shown in \autoref{fig:laguerre}.
   \label{fig:laguerre}
 \end{figure}
 
-
 %% discuss effect of changing l, alpha
-
-%% choose appropriate r_max to show exponential decay
 
 \section{Kinetic Energy Matrix Elements}
 \label{sec:kinet-energy-matr}
 
 % derive kinetic energy matrix elements
+
+Here, we shall derive an analytic expression for the kinetic energy matrix
+elements, with regard to the Laguerre radial basis.
+Firstly, we note that the kinetic energy matrix elements are defined by
+\begin{equation*}
+  K_{i, j}
+  =
+  \bra{\phi_{i}}
+  \hat{K}
+  \ket{\phi_{j}}
+  =
+  \bra{\phi_{i}}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac{1}{2 r^{2}}
+    \hat{L}^{2}
+  }
+  \ket{\phi_{j}}
+\end{equation*}
+whence we note that
+\begin{alignat*}{2}
+  K_{i, j}
+  {}={}
+  &
+  \bra
+  {
+    \tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}
+    ,
+    Y_{\ell_{i}}^{m_{i}}
+  }
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \pdv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac{1}{2 r^{2}}
+    \hat{L}^{2}
+  }
+  \ket
+  {
+    \tfrac{1}{r}\varphi_{k_{j}, \ell_{j}}
+    ,
+    Y_{\ell_{j}}^{m_{j}}
+  }
+  \\
+  {}={}
+  &
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \dv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac
+    {
+      \ell_{j}
+      \lr{\ell_{j} + 1}
+    }
+    {
+      2
+      r^{2}
+    }
+  }
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell_{j}}}
+  \bra{Y_{\ell_{i}}^{m_{i}}}
+  \ket{Y_{\ell_{j}}^{m_{j}}}
+  \\
+  {}={}
+  &
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell_{i}}}
+  \hat{K}_{\ell_{j}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell_{j}}}
+  \delta_{\ell_{i}, \ell_{j}}
+  \delta_{m_{i}, m_{j}}
+  .
+\end{alignat*}
+We note that since the matrix element is necessarily zero, where
+$\ell_{i} \neq \ell_{j}$, we restrict our attention to the case where
+$\ell_{i} = \ell_{j} = \ell$.
+It follows that the radial terms can be written in the form
+\begin{alignat*}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  {}={}
+  &
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2 r}
+    \dv[2]{r}
+    \lr[\big]
+    {
+      r
+      \cdot
+    }
+    +
+    \dfrac
+    {
+      \ell
+      \lr{\ell + 1}
+    }
+    {
+      2
+      r^{2}
+    }
+  }
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  \\
+  {}={}
+  &
+  \int_{0}^{\infty}
+  \dd{r}
+  {
+    r^{2}
+    \overline
+    {
+      \tfrac{1}{r}
+      \varphi_{k_{i}, \ell}\lr{r}
+    }
+    \lrsq[\bigg]
+    {
+      -
+      \dfrac{1}{2 r}
+      \dv[2]{r}
+      \lr[\big]
+      {
+        r
+        \cdot
+      }
+      +
+      \dfrac
+      {
+        \ell
+        \lr{\ell + 1}
+      }
+      {
+        2
+        r^{2}
+      }
+    }
+    \lr[\big]
+    {
+      \tfrac{1}{r}
+      \varphi_{k_{j}, \ell}\lr{r}
+    }
+  }
+  \\
+  {}={}
+  &
+  \int_{0}^{\infty}
+  \dd{r}
+  {
+    \varphi_{k_{i}, \ell}\lr{r}
+    \lrsq[\bigg]
+    {
+      -
+      \dfrac{1}{2}
+      \dv[2]{r}
+      +
+      \dfrac
+      {
+        \ell
+        \lr{\ell + 1}
+      }
+      {
+        2
+        r^{2}
+      }
+    }
+    \varphi_{k_{j}, \ell}\lr{r}
+  }
+\end{alignat*}
+where we have dropped the conjugacy due to the Laguerre radial basis functions
+being entirely real-valued.
+Expanding this fully, we have that
+\begin{alignat*}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  {}={}
+  &
+  \int_{0}^{\infty}
+  \dd{r}
+  % {
+  \lr[\big]
+  {
+    N_{k_{i}, \ell}
+    \lr
+    {
+      2
+      \alpha
+      r
+    }^{\ell + 1}
+    \exponential\lr
+    {
+      -
+      \alpha
+      r
+    }
+    L_{k_{i} - 1}^{2 \ell + 1}\lr{2 \alpha r}
+  }
+  \\
+  &
+  {}\times{}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2}
+    \dv[2]{r}
+    +
+    \dfrac
+    {
+      \ell
+      \lr{\ell + 1}
+    }
+    {
+      2
+      r^{2}
+    }
+  }
+  \lr[\big]
+  {
+    N_{k_{j}, \ell}
+    \lr
+    {
+      2
+      \alpha
+      r
+    }^{\ell + 1}
+    \exponential\lr
+    {
+      -
+      \alpha
+      r
+    }
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{2 \alpha r}
+  }
+\end{alignat*}
+whence we introduce the variable transformation $x = 2 \alpha r$, to yield an
+equivalent integral of the form
+\begin{alignat*}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  {}={}
+  &
+  \lr{2 \alpha}
+  N_{k_{i}, \ell}
+  N_{k_{j}, \ell}
+  \int_{0}^{\infty}
+  \dd{x}
+  x^{\ell + 1}
+  \exponential\lr{-\tfrac{x}{2}}
+  L_{k_{i} - 1}^{2 \ell + 1}\lr{x}
+  \\
+  &
+  {}\times{}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2}
+    \dv[2]{x}
+    +
+    \dfrac
+    {
+      \ell
+      \lr{\ell + 1}
+    }
+    {
+      2
+      x^{2}
+    }
+  }
+  \lr[\big]
+  {
+    x^{\ell + 1}
+    \exponential\lr{-\tfrac{x}{2}}
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  }
+  .
+\end{alignat*}
+At this point, we note that
+\begin{alignat*}{2}
+  \dv[2]{x}
+  \lr[\big]
+  {
+    &
+    x^{\ell + 1}
+    \exponential\lr{-\tfrac{x}{2}}
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  }
+  {}={}
+  x^{\ell + 1}
+  \exponential\lr{-\tfrac{x}{2}}
+  \\
+  &
+  {}\times{}
+  \lr[\Bigg]
+  {
+    \lr[\bigg]
+    {
+      \dfrac
+      {
+        \ell
+        \lr{\ell + 1}
+      }
+      {
+        x^{2}
+      }
+      -
+      \dfrac
+      {
+        \ell + 1
+      }
+      {
+        x
+      }
+      +
+      \dfrac{1}{4}
+    }
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    +
+    \lr[\bigg]
+    {
+      \dfrac
+      {
+        2
+        \lr{\ell + 1}
+      }
+      {
+        x
+      }
+      -
+      1
+    }
+    \dv{x}
+    \lr[\big]
+    {
+      L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    }
+    +
+    \dv[2]{x}
+    \lr[\big]
+    {
+      L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    }
+  }
+\end{alignat*}
+whence
+\begin{alignat*}{2}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2}
+    \dv[2]{x}
+    +
+    \dfrac
+    {
+      \ell
+      \lr{\ell + 1}
+    }
+    {
+      2
+      x^{2}
+    }
+  }
+  \lr[\big]
+  {
+    &
+    x^{\ell + 1}
+    \exponential\lr{-\tfrac{x}{2}}
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  }
+  {}={}
+  -
+  \dfrac{1}{2}
+  x^{\ell + 1}
+  \exponential\lr{-\tfrac{x}{2}}
+  \\
+  &
+  {}\times{}
+  \lr[\Bigg]
+  {
+    \lr[\bigg]
+    {
+      -
+      \dfrac
+      {
+        \ell + 1
+      }
+      {
+        x
+      }
+      +
+      \dfrac{1}{4}
+    }
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    +
+    \lr[\bigg]
+    {
+      \dfrac
+      {
+        2
+        \lr{\ell + 1}
+      }
+      {
+        x
+      }
+      -
+      1
+    }
+    \dv{x}
+    \lr[\big]
+    {
+      L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    }
+    +
+    \dv[2]{x}
+    \lr[\big]
+    {
+      L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+    }
+  }
+  .
+\end{alignat*}
+We utilise the following recurrence relation of the generalised Laguerre
+polynomials,
+\begin{equation*}
+  \dfrac{t + 1 - x}{x}
+  \dv{x}
+  \lr[\big]
+  {
+    L_{n}^{t}\lr{x}
+  }
+  +
+  \dv[2]{x}
+  \lr[\big]
+  {
+    L_{n}^{t}\lr{x}
+  }
+  =
+  -
+  \dfrac{n}{x}
+  L_{n}^{t}\lr{x}
+\end{equation*}
+to further simplify the above term to the form
+\begin{equation*}
+  \lrsq[\bigg]
+  {
+    -
+    \dfrac{1}{2}
+    \dv[2]{x}
+    +
+    \dfrac
+    {
+      \ell
+      \lr{\ell + 1}
+    }
+    {
+      2
+      x^{2}
+    }
+  }
+  \lr[\big]
+  {
+    x^{\ell + 1}
+    \exponential\lr{-\tfrac{x}{2}}
+    L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  }
+  =
+  \dfrac{1}{2}
+  \lr[\bigg]
+  {
+    \dfrac
+    {
+      k_{j}
+      +
+      \ell
+    }
+    {
+      x
+    }
+    -
+    \dfrac{1}{4}
+  }
+  x^{\ell + 1}
+  \exponential\lr{-\tfrac{x}{2}}
+  L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+\end{equation*}
+whence the integral becomes
+\begin{equation*}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  =
+  \alpha
+  N_{k_{i}, \ell}
+  N_{k_{j}, \ell}
+  \int_{0}^{\infty}
+  \dd{x}
+  \lr[\bigg]
+  {
+    k_{j}
+    +
+    \ell
+    -
+    \dfrac{x}{4}
+  }
+  x^{2\ell + 1}
+  \exponential\lr{-x}
+  L_{k_{i} - 1}^{2 \ell + 1}\lr{x}
+  L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+\end{equation*}
+We note that
+\begin{equation*}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  =
+  \dfrac
+  {
+    N_{k_{i}, \ell}
+    N_{k_{j}, \ell}
+  }
+  {
+    2
+    \alpha
+  }
+  \int_{0}^{\infty}
+  \dd{x}
+  {
+    x^{2\ell + 2}
+    \exponential\lr{-x}
+    L_{k_{i} - 1}^{2\ell + 1}\lr{x}
+    L_{k_{j} - 1}^{2\ell + 1}\lr{x}
+  }
+\end{equation*}
+whence the previous integral can be separated as
+\begin{alignat*}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  {}={}
+  &
+  \alpha
+  N_{k_{i}, \ell}
+  N_{k_{j}, \ell}
+  \lr{k_{j} + \ell}
+  \int_{0}^{\infty}
+  \dd{x}
+  x^{2\ell + 1}
+  \exponential\lr{-x}
+  L_{k_{i} - 1}^{2 \ell + 1}\lr{x}
+  L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  \\
+  &
+  {}-{}
+  \dfrac{\alpha}{4}
+  N_{k_{i}, \ell}
+  N_{k_{j}, \ell}
+  \int_{0}^{\infty}
+  x^{2\ell + 2}
+  \exponential\lr{-x}
+  L_{k_{i} - 1}^{2 \ell + 1}\lr{x}
+  L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  \\
+  {}={}
+  &
+  \alpha
+  N_{k_{i}, \ell}
+  N_{k_{j}, \ell}
+  \lr{k_{j} + \ell}
+  \int_{0}^{\infty}
+  \dd{x}
+  x^{2\ell + 1}
+  \exponential\lr{-x}
+  L_{k_{i} - 1}^{2 \ell + 1}\lr{x}
+  L_{k_{j} - 1}^{2 \ell + 1}\lr{x}
+  \\
+  &
+  {}-{}
+  \dfrac{\alpha^{2}}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  .
+\end{alignat*}
+At this point we note the following property of the generalised Laguerre
+polynomials,
+\begin{equation*}
+  \int_{0}^{\infty}
+  \dd{x}
+  x^{t}
+  \exponential\lr{-x}
+  L_{n}^{t}\lr{x}
+  L_{m}^{t}\lr{x}
+  =
+  \dfrac
+  {
+    \lr{n + t}!
+  }
+  {
+    n!
+  }
+  \delta_{m, n}
+\end{equation*}
+whence the radial term of the kinetic energy matrix elements is shown to be
+given analytically by the expression
+\begin{alignat*}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \hat{K}_{\ell}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  {}={}
+  &
+  \alpha
+  N_{k_{i}, \ell}^{2}
+  \lr{k_{j} + \ell}
+  \dfrac
+  {
+    \lr{k_{j} + 2\ell}!
+  }
+  {
+    \lr{k_{j} - 1}!
+  }
+  \delta_{k_{i}, k_{j}}
+  -
+  \dfrac{\alpha^{2}}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  \\
+  {}={}
+  &
+  \alpha^{2}
+  \delta_{k_{i}, k_{j}}
+  -
+  \dfrac{\alpha^{2}}{2}
+  \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+  \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  .
+\end{alignat*}
+It follows that the kinetic energy matrix elements are thus of the form
+\begin{equation*}
+  K_{i, j}
+  =
+  \lr[\Big]
+  {
+    \alpha^{2}
+    \delta_{k_{i}, k_{j}}
+    -
+    \dfrac{\alpha^{2}}{2}
+    \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
+    \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
+  }
+  \delta_{\ell_{i}, \ell_{j}}
+  \delta_{m_{i}, m_{j}}
+  .
+\end{equation*}
+
 
 \subsection{Extension: Overlap Matrix Elements}
 \label{sec:extens-overl-matr}
