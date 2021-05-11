@@ -588,7 +588,7 @@ constants as required.
 FORTRAN code for calculating the Laguerre basis functions for a given radial
 grid can be found in
 \lstinline[style=ff]{src/laguerre.f90: }\lstinline{subroutine radial_basis()},
-and is shown below
+and is shown in \autoref{lst:laguerre_radial_basis}.
 
 \lstinputlisting[
 linerange={7-75}
@@ -1493,12 +1493,12 @@ It follows that the kinetic energy matrix elements are thus of the form
 \begin{equation*}
   K_{i, j}
   =
+  \alpha^{2}
   \lr[\Big]
   {
-    \alpha^{2}
     \delta_{k_{i}, k_{j}}
     -
-    \dfrac{\alpha^{2}}{2}
+    \dfrac{1}{2}
     \bra{\tfrac{1}{r}\varphi_{k_{i}, \ell}}
     \ket{\tfrac{1}{r}\varphi_{k_{j}, \ell}}
   }
@@ -1515,6 +1515,76 @@ It follows that the kinetic energy matrix elements are thus of the form
 
 \section{Atomic Hydrogen States}
 \label{sec:atom-hydr-stat}
+
+%
+
+\subsection{Hydrogenic Atom Code}
+\label{sec:hydrogenic-atom-code}
+
+\subsubsection{Overlap Matrix Elements}
+\label{sec:overl-matr-elem}
+
+FORTRAN code for calculating the overlap matrix elements for a Laguerre radial
+basis of a given dimension can be found in
+\lstinline[style=ff]{src/laguerre.f90: }\lstinline{subroutine overlap_matrix()},
+and is shown in \autoref{lst:laguerre_overlap}.
+
+\lstinputlisting[
+linerange={77-120}
+, firstnumber=77
+, caption={Calculation of overlap matrix elements for a Laguerre radial basis of
+a given dimension.}
+, label={lst:laguerre_overlap}
+]{../src/laguerre.f90}
+
+\subsubsection{Kinetic Energy Matrix Elements}
+\label{sec:kinet-energy-matr-1}
+
+FORTRAN code for calculating the kinetic energy matrix elements for a Laguerre
+radial basis of a given dimension can be found in
+\lstinline[style=ff]{src/laguerre.f90: }\lstinline{subroutine kinetic_matrix()},
+and is shown in \autoref{lst:laguerre_kinetic}.
+
+\lstinputlisting[
+linerange={122-166}
+, firstnumber=122
+, caption={Calculation of kinetic energy matrix elements for a Laguerre radial
+  basis of a given dimension.}
+, label={lst:laguerre_kinetic}
+]{../src/laguerre.f90}
+
+\subsubsection{Coulomb Potential Matrix Elements}
+\label{sec:coulomb-potential-matr}
+
+FORTRAN code for calculating the Coulomb potential matrix elements for a
+Laguerre radial basis of a given dimension can be found in
+\lstinline[style=ff]{src/laguerre.f90: }\lstinline{subroutine coulomb_matrix()},
+and is shown in \autoref{lst:laguerre_coulomb}.
+
+\lstinputlisting[
+linerange={168-204}
+, firstnumber=168
+, caption={Calculation of Coulomb potential matrix elements for a Laguerre
+  radial basis of a given dimension.}
+, label={lst:laguerre_coulomb}
+]{../src/laguerre.f90}
+
+\subsubsection{Hamiltonian Matrix Elements}
+\label{sec:hamilt-matr-elem}
+
+FORTRAN code for calculating the overlap, kinetic energy, potential energy, and
+Hamiltonian matrix elements for a Laguerre radial basis of a given dimension can
+be found in
+\lstinline[style=ff]{src/laguerre.f90: }\lstinline{subroutine hydrogenic_matrices()},
+and is shown in \autoref{lst:laguerre_hydrogenic}.
+
+\lstinputlisting[
+linerange={206-244}
+, firstnumber=206
+, caption={Calculation of overlap, kinetic energy, potential energy, and
+  Hamiltonian matrix elements for a Laguerre radial basis of a given dimension.}
+, label={lst:laguerre_hydrogenic}
+]{../src/laguerre.f90}
 
 % figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence % of the
 % eigenvalues to the hydrogen energy spectrum

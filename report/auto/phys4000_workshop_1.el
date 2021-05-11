@@ -25,6 +25,11 @@
     "sec:kinet-energy-matr"
     "sec:extens-overl-matr"
     "sec:atom-hydr-stat"
+    "sec:hydrogenic-atom-code"
+    "sec:overl-matr-elem"
+    "sec:kinet-energy-matr-1"
+    "sec:coulomb-potential-matr"
+    "sec:hamilt-matr-elem"
     "sec:extens-he+-ion"
     "sec:extens-surface-plot-xz"
     "sec:extens-numer-calc-potent")
