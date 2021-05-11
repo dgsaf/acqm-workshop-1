@@ -1,4 +1,4 @@
-# ACQM - Workshop 1
+# Hydrogenic Atom
 
 ## Contents
   - `report/`
@@ -17,7 +17,8 @@
   make hydrogenic_atom
   ```
 
-  To compile the report, note that you must first make the figures:
+  To compile the report, note that the figures have been externalised and must
+  be compiled beforehand:
   ```bash
   cd report
   make -f phys4000_workshop_1.makefile
