@@ -1605,6 +1605,7 @@ It follows that the kinetic energy matrix elements are thus of the form
 
 % derive overlap energy matrix elements
 
+\clearpage
 \section{Atomic Hydrogen States}
 \label{sec:atom-hydr-stat}
 
@@ -1696,8 +1697,12 @@ and is shown in \autoref{lst:hydrogenic_atom}.
 , label={lst:hydrogenic_atom}
 ]{../src/hydrogenic_atom.f90}
 
+\clearpage
 \subsection{Hydrogen Energy Spectrum Figures}
 \label{sec:hydr-atom-progr-1}
+
+\subsubsection{Behaviour of Bound Energy Spectrum with increasing
+  $\mathrm{n_{\ell}}$}
 
 % figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence of the
 % eigenvalues to the hydrogen energy spectrum
@@ -1788,9 +1793,12 @@ It can also be seen that by approximately $\mathrm{n_{basis}} = 128$, that the
 bound energy spectrum is sufficiently dense as to approximate the analytical
 energy spectrum to a reasonable level.
 
+\clearpage
 % figure: for fixed n_basis and varying alpha, the behaviour of the eigenvalue
 % spectrum, and the consequences it could have on subsequent scattering
 % calculations
+
+\subsubsection{Behaviour of Bound Energy Spectrum with Varying $\alpha_{\ell}$}
 
 The bound energy spectrum of a one-electron Hydrogen atom, calculated for
 $l = 0$, $\mathrm{n_{basis}} = 64$, and for varying
@@ -1892,6 +1900,7 @@ That is, over-emphasising short-range or long-range structure, by using either a
 small or large value for $\alpha_{\ell}$ may lead to inaccurate scattering
 calculations.
 
+\subsubsection{Comparison of Calculated and Analytical Radial Functions}
 % figures: for a satisfactory converged n_basis, a figure each for l = 0, l = 1,
 % comparing the first (3) bound states with analytical solutions
 
@@ -2043,7 +2052,7 @@ for $k = 1, 2, \dotsc$, for any given $\ell \in \lrset{0, 1, \dotsc}$.
             \addplot [
             color = red!\i!black
             ] table [y index = \n]
-            {../data/0.txt};
+            {../analytic/l-0.txt};
           }\temp
           \addlegendentryexpanded{$\overline{\Phi}_{\n, 0}\lr{r}$}
         }
@@ -2128,7 +2137,7 @@ for $k = 1, 2, \dotsc$, for any given $\ell \in \lrset{0, 1, \dotsc}$.
             \addplot [
             color = red!\i!black
             ] table [y index = \n]
-            {../data/1.txt};
+            {../analytic/l-1.txt};
           }\temp
           \addlegendentryexpanded{$\overline{\Phi}_{\n, 1}\lr{r}$}
         }
@@ -2161,6 +2170,7 @@ for $k = 1, 2, \dotsc$, for any given $\ell \in \lrset{0, 1, \dotsc}$.
   \label{fig:bound-states}
 \end{figure}
 
+\clearpage
 \subsection{Extension: $\mathrm{He}^{+}$ Ion}
 \label{sec:extens-he+-ion}
 

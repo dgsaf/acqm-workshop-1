@@ -14,6 +14,9 @@
 \BOOKMARK [3][-]{subsubsection.4.1.4}{Hamiltonian Matrix Elements}{subsection.4.1}% 14
 \BOOKMARK [3][-]{subsubsection.4.1.5}{Hydrogenic Atom Program}{subsection.4.1}% 15
 \BOOKMARK [2][-]{subsection.4.2}{Hydrogen Energy Spectrum Figures}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.3}{Extension: He+ Ion}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.4}{Extension: Surface Plot in xz Plane}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.5}{Extension: Numerically Calculating Potential Matrix Elements}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Behaviour of Bound Energy Spectrum with increasing n}{subsection.4.2}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Behaviour of Bound Energy Spectrum with Varying }{subsection.4.2}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Comparison of Calculated and Analytical Radial Functions}{subsection.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Extension: He+ Ion}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Extension: Surface Plot in xz Plane}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.5}{Extension: Numerically Calculating Potential Matrix Elements}{section.4}% 22

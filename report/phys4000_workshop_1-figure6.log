@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1552,36 +1552,36 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2093.
+(hyperref)                removing `math shift' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 2093.
+(hyperref)                removing `superscript' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2093.
+(hyperref)                removing `math shift' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2098.
+(hyperref)                removing `math shift' on input line 2169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2098.
+(hyperref)                removing `math shift' on input line 2169.
 
 No complaints by nag.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2109.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2109.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2109.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2109.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2180.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2180.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2180.
  ) 
 Here is how much of TeX's memory you used:
- 48218 strings out of 492616
- 1110455 string characters out of 6106108
- 2310538 words of memory out of 5000000
+ 48224 strings out of 492616
+ 1110501 string characters out of 6106108
+ 2311019 words of memory out of 5000000
  51334 multiletter control sequences out of 15000+600000
- 548918 words of font info for 125 fonts, out of 8000000 for 9000
+ 549185 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,23n,105p,3441b,2399s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{subsection.4.5} has been referenced but does not 
