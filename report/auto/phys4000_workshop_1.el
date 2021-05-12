@@ -9,6 +9,7 @@
     "article"
     "art10"
     "base"
+    "pgfplotstable"
     "color"
     "listings")
    (LaTeX-add-labels
@@ -31,6 +32,8 @@
     "sec:coulomb-potential-matr"
     "sec:hamilt-matr-elem"
     "sec:hydr-atom-progr"
+    "sec:hydr-atom-progr-1"
+    "fig:energy-spectrum-0-1.0"
     "sec:extens-he+-ion"
     "sec:extens-surface-plot-xz"
     "sec:extens-numer-calc-potent")

@@ -1,0 +1,8 @@
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-1/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-2/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-8/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-32/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-64/eigen_values.txt
+phys4000_workshop_1-figure4.pdf: ../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-128/eigen_values.txt

@@ -4,6 +4,7 @@
 \usepackage{base}
 
 % - Plotting
+\usepackage{pgfplotstable}
 \usepgfplotslibrary{units}
 \usetikzlibrary{external}
 \tikzexternalize[mode=list and make]
@@ -1604,8 +1605,96 @@ and is shown in \autoref{lst:hydrogenic_atom}.
 , label={lst:hydrogenic_atom}
 ]{../src/hydrogenic_atom.f90}
 
-% figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence % of the
+\subsection{Hydrogen Energy Spectrum Figures}
+\label{sec:hydr-atom-progr-1}
+
+% figure: for l = 0 alpha = 1.0, and varying n_basis, the convergence of the
 % eigenvalues to the hydrogen energy spectrum
+
+The bound energy spectrum of a one-electron Hydrogen atom, calculated for
+$l = 0$, $\alpha = 1.0$, and for varying
+$\mathrm{n_{basis}} = 2^{0}, \dotsc,  2^{7}$ is shown in
+\autoref{fig:energy-spectrum-0-1.0}.
+It is compared with the analytical energies, which are known to be
+\begin{equation*}
+  E_{n}
+  =
+  -
+  \dfrac{1}{2 n^{2}}
+  \qq{for}
+  n = 1, 2, \dotsc
+\end{equation*}
+in atomic units.
+Note that all pseudo-energies greater than 0, obtained by diagonalising the
+Hamiltonian matrix, are not presented in \autoref{fig:energy-spectrum-0-1.0}.
+It can be seen the bound energy spectrums do indeed converge to the analytical
+bound energies, as $\mathrm{n_{basis}}$ increases.
+It can also be seen that by approximately $\mathrm{n_{basis}} = 128$, that the
+bound energy spectrum is sufficiently dense as to approximate the analytical
+energy spectrum to a reasonable level.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      , scale = 1.5
+      , title = {Bound Energy Spectrum for [$\ell = 0$, $\alpha_{\ell} = 1.0$]
+        with varying $\mathrm{n_{basis}}$}
+      , xlabel = {$\mathrm{n_{basis}}$}
+      , ylabel = {Energy}
+      , x unit = {}
+      , y unit = {\si{\hartree}}
+      , xmin = 0.5
+      , ymin = -0.55
+      , ymax = 0.0
+      , restrict y to domain=-0.55:0.0
+      , xmode = log
+      , log basis x = {2}
+      , grid = minor
+      , legend entries
+      , legend style = {
+        cells = {anchor=east}
+        , legend pos = north east
+        , font = \tiny
+      }
+      , xtick={1, 2, 4, 8, 16, 32, 64, 128}
+      , xticklabels={1, 2, 4, 8, 16, 32, 64, 128}
+      , extra x ticks = {512}
+      , extra x tick labels={$\infty$}
+      ]
+      \pgfmathsetmacro{\w}{0.4}
+
+      \foreach \n in {1, 2, 4, 8, 16, 32, 64, 128}{
+        \pgfplotstableread[header=false, col sep=space, row sep=newline]
+        {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-\n/eigen_values.txt}
+        {\data}
+
+        \pgfplotstableforeachcolumnelement{[index]0}\of\data\as\energy{%
+          \addplot [black, mark=none] coordinates {
+            (\n*2^(-\w), \energy)
+            (\n*2^(+\w), \energy)
+          };
+        }
+
+        \pgfplotstableclear{\data}
+      }
+
+      \foreach \k in {1, ..., 50}{
+        \pgfmathsetmacro{\energy}{-0.5 / (\k ^ 2)}
+        \addplot [black, thick, mark=none] coordinates {
+          (512.0*2^(-\w), \energy)
+          (512.0*2^(+\w), \energy)
+        };
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Bound energy spectrums, in units of \si{\hartree}, for a one-electron
+    Hydrogen atom, where $\ell = 0$, $\alpha = 1.0$, and where
+    $\mathrm{n_{basis}} = 2^{0}, \dotsc, 2^{7}$.
+    It is compared with the analytical energies, represented at the label
+    $\mathrm{n_{basis}} = \infty$.}
+  \label{fig:energy-spectrum-0-1.0}
+\end{figure}
 
 % figure: for fixed n_basis and varying alpha, the behaviour of the eigenvalue
 % spectrum, and the consequences it could have on subsequent scattering
