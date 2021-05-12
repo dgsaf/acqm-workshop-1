@@ -33,7 +33,10 @@
     "sec:hamilt-matr-elem"
     "sec:hydr-atom-progr"
     "sec:hydr-atom-progr-1"
-    "fig:energy-spectrum-0-1.0"
+    "fig:energy-spectrum-varying-n_basis"
+    "fig:energy-spectrum-varying-alpha"
+    "fig:bound-states-0"
+    "fig:bound-states"
     "sec:extens-he+-ion"
     "sec:extens-surface-plot-xz"
     "sec:extens-numer-calc-potent")

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 13:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1525,1105 +1525,1377 @@ Overfull \hbox (23.35106pt too wide) detected at line 1279
 
 (../src/laguerre.f90) (../src/laguerre.f90) (../src/laguerre.f90) (../src/lague
 rre.f90) (../src/hydrogenic_atom.f90)
-\openout4 = `phys4000_workshop_1-figure4.dpth'.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+\openout4 = `phys4000_workshop_1-figure5.dpth'.
 
-Package pgfplots info on input line 1665: Using 'lua backend=false' for axis: x
-mode=log unsupported (yet).
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-1/eig
-en_values.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-0.5000.atomic_charge-1.n_basis-64/ei
+gen_values.txt}
 \tikzexternal@dep@file=\write5
-\openout5 = `phys4000_workshop_1-figure4.dep'.
+\openout5 = `phys4000_workshop_1-figure5.dep'.
 
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-2/eig
-en_values.txt}
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
-
- [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-4/eig
-en_values.txt}
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
-
- [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-8/eig
-en_values.txt}
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-16/ei
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+PGFPlots: reading {../output/l-0.m-0.alpha-0.7500.atomic_charge-1.n_basis-64/ei
 gen_values.txt}
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
-
- [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-32/ei
-gen_values.txt}
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-64/ei
 gen_values.txt}
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-128/e
-igen_values.txt}
+PGFPlots: reading {../output/l-0.m-0.alpha-1.2500.atomic_charge-1.n_basis-64/ei
+gen_values.txt}
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
+PGFPlots: reading {../output/l-0.m-0.alpha-1.5000.atomic_charge-1.n_basis-64/ei
+gen_values.txt}
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 
 Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
-
- [warning /pgfplots/warning/plot without coordinates]
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
-
- [warning /pgfplots/warning/plot without coordinates]
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 1681.
+ filtered away) on input line 1746.
 
  [warning /pgfplots/warning/plot without coordinates]
 [15
 
 {/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/fonts/map/pdftex/updmap/pdftex.map}]
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1768.
@@ -2651,13 +2923,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1784.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1784.
  ) 
 Here is how much of TeX's memory you used:
- 48355 strings out of 492616
- 1114049 string characters out of 6106108
- 1878047 words of memory out of 5000000
- 51470 multiletter control sequences out of 15000+600000
- 548765 words of font info for 122 fonts, out of 8000000 for 9000
+ 48388 strings out of 492616
+ 1115303 string characters out of 6106108
+ 1899556 words of memory out of 5000000
+ 51510 multiletter control sequences out of 15000+600000
+ 548606 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,25n,105p,834b,2543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,25n,105p,834b,2532s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{subsection.4.5} has been referenced but does not 
 exist, replaced by a fixed one
 
@@ -2723,7 +2995,7 @@ l-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/l1iz05g
 9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pu
 blic/amsfonts/cm/cmr7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-
 combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on phys4000_workshop_1-figure4.pdf (1 page, 50996 bytes).
+Output written on phys4000_workshop_1-figure5.pdf (1 page, 50913 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  106 compressed objects within 2 object streams

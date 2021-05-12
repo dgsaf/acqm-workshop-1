@@ -32,3 +32,11 @@ phys4000_workshop_1-figure4.pdf:
 	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure4" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
 
 phys4000_workshop_1-figure4.pdf: phys4000_workshop_1-figure4.md5
+phys4000_workshop_1-figure5.pdf: 
+	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure5" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
+
+phys4000_workshop_1-figure5.pdf: phys4000_workshop_1-figure5.md5
+phys4000_workshop_1-figure6.pdf: 
+	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure6" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
+
+phys4000_workshop_1-figure6.pdf: phys4000_workshop_1-figure6.md5

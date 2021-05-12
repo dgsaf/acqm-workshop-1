@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 13:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1514,12 +1514,12 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1{/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/shar
 e/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2
+] [2] [3
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 600.
- (../src/laguerre.f90 [3])
+nput line 691.
+ (../src/laguerre.f90 [4])
 Opening 'phys4000_workshop_1.figlist' for writing.
 \tikzexternal@outfile=\write5
 \openout5 = `phys4000_workshop_1.figlist'.
@@ -1540,52 +1540,64 @@ Writing 'phys4000_workshop_1-figure3' to 'phys4000_workshop_1.makefile'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./phys4000_workshop_1-figure0.pdf> <./phys4000_workshop_1-figure1.pdf> 
+[5] [6 <./phys4000_workshop_1-figure0.pdf> <./phys4000_workshop_1-figure1.pdf> 
 <./phys4000_workshop_1-figure2.pdf> <./phys4000_workshop_1-figure3.pdf>]
-Overfull \hbox (23.35106pt too wide) detected at line 1279
+Overfull \hbox (23.35106pt too wide) detected at line 1370
 []
  []
 
-[6
+[7
 
-] [7] (../src/laguerre.f90) [8] (../src/laguerre.f90) [9]
-(../src/laguerre.f90) (../src/laguerre.f90 [10]) (../src/hydrogenic_atom.f90
-[11] [12] [13] [14])
+] [8] (../src/laguerre.f90) [9] (../src/laguerre.f90) [10]
+(../src/laguerre.f90) (../src/laguerre.f90 [11]) (../src/hydrogenic_atom.f90
+[12] [13] [14] [15])
 Writing 'phys4000_workshop_1-figure4' to 'phys4000_workshop_1.figlist'.
 Writing 'phys4000_workshop_1-figure4' to 'phys4000_workshop_1.makefile'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+Writing 'phys4000_workshop_1-figure5' to 'phys4000_workshop_1.figlist'.
+Writing 'phys4000_workshop_1-figure5' to 'phys4000_workshop_1.makefile'.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1706.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+Writing 'phys4000_workshop_1-figure6' to 'phys4000_workshop_1.figlist'.
+Writing 'phys4000_workshop_1-figure6' to 'phys4000_workshop_1.makefile'.
+[16]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1706.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1706.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1711.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1711.
+(hyperref)                removing `math shift' on input line 1963.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 1963.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1963.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1968.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1968.
 
 No complaints by nag.
-[15]
+[17 <./phys4000_workshop_1-figure4.pdf>]
 ===== mode=`list and make': Use 'make -f phys4000_workshop_1.makefile' to gener
 ate all images. Then, re-run (pdf)latex phys4000_workshop_1. =====
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1722.
-[16 <./phys4000_workshop_1-figure4.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1722.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1979.
+[18 <./phys4000_workshop_1-figure5.pdf>] [19 <./phys4000_workshop_1-figure6.pdf
+>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1979.
  (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1722.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1722.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1979.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1979.
 
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
 (rerunfilecheck)             Checksum: 3EE327DC9164F5D644854DF451233988;1464.
@@ -1595,11 +1607,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 48024 strings out of 492616
- 1098544 string characters out of 6106108
+ 48035 strings out of 492616
+ 1098760 string characters out of 6106108
  1789417 words of memory out of 5000000
- 50696 multiletter control sequences out of 15000+600000
- 548215 words of font info for 117 fonts, out of 8000000 for 9000
+ 50700 multiletter control sequences out of 15000+600000
+ 548158 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,15n,105p,792b,2268s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
@@ -1642,10 +1654,10 @@ ype1/public/amsfonts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n
 -texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pf
 b></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (16 pages, 415106 bytes).
+Output written on phys4000_workshop_1.pdf (19 pages, 442920 bytes).
 PDF statistics:
- 924 PDF objects out of 1000 (max. 8388607)
- 867 compressed objects within 9 object streams
- 473 named destinations out of 1000 (max. 500000)
- 29374 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 981 PDF objects out of 1000 (max. 8388607)
+ 918 compressed objects within 10 object streams
+ 478 named destinations out of 1000 (max. 500000)
+ 29384 words of extra memory for PDF output out of 29859 (max. 10000000)
 

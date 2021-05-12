@@ -334,6 +334,97 @@ where we have defined the radial inner product to be of the form
   }
   .
 \end{equation*}
+We solve the system by the method of basis expansion, which is to say that we
+expand the pseudostates, $\lrset{\ket{\Phi_{i}}}_{i = 1}^{N}$ of $\hat{H}$ in
+terms of the basis $\mathcal{B}$, as
+\begin{equation*}
+  \ket{\Phi_{i}}
+  =
+  \sum_{j = 1}^{N}
+  C_{i, j}
+  \ket{\phi_{j}}
+\end{equation*}
+which, in the limit as $N \to \infty$, satisfy, for $k = 1, \dotsc, N$,
+\begin{equation*}
+  \hat{H}
+  \ket{\Phi_{k}}
+  =
+  E_{k}
+  \ket{\Phi_{k}}
+  .
+\end{equation*}
+Whence, for $k = 1, \dotsc, N$, we have that
+\begin{alignat*}{2}
+  \bra{\phi_{i}}
+  \hat{H}
+  \ket{\Phi_{k}}
+  {}={}
+  &
+  E_{k}
+  \bra{\phi_{i}}
+  \ket{\Phi_{k}}
+  \\
+  \sum_{j = 1}^{N}
+  C_{k, j}
+  \bra{\phi_{i}}
+  \hat{H}
+  \ket{\phi_{j}}
+  {}={}
+  &
+  E_{k}
+  \sum_{j = 1}^{N}
+  C_{k, j}
+  \bra{\phi_{i}}
+  \ket{\phi_{k}}
+  \\
+  \sum_{j = 1}^{N}
+  C_{k, j}
+  \lr
+  {
+    \bra{\phi_{i}}
+    \hat{H}
+    \ket{\phi_{j}}
+    -
+    E_{k}
+    \bra{\phi_{i}}
+    \ket{\phi_{k}}
+  }
+  {}={}
+  &
+  0
+  \\
+  \sum_{j = 1}^{N}
+  C_{k, j}
+  \lr
+  {
+    H_{i, j}
+    -
+    E_{k}
+    B_{i, j}
+  }
+  {}={}
+  &
+  0
+\end{alignat*}
+yielding a set of generalised eigenvalue problems.
+Lastly, due to the Hamiltonian being reducible for given $\ell$, $m$, we
+introduce the notation that
+\begin{equation*}
+  \ket{\Phi_{k, \ell, m}}
+  =
+  \sum_{i = 1}^{N}
+  C_{k, i}^{(\ell, m)}
+  \ket{\phi_{i, \ell, m}}
+\end{equation*}
+as well as the radial functions of the pseudostates
+\begin{equation*}
+  \ket{\overline{\Phi}_{k, \ell, m}}
+  =
+  \sum_{i = 1}^{N}
+  C_{k, i}^{(\ell, m)}
+  \ket{\varphi_{i, \ell, m}}
+  .
+\end{equation*}
 
 \clearpage
 \section{Laguerre Basis}
@@ -1614,7 +1705,7 @@ and is shown in \autoref{lst:hydrogenic_atom}.
 The bound energy spectrum of a one-electron Hydrogen atom, calculated for
 $l = 0$, $\alpha = 1.0$, and for varying
 $\mathrm{n_{basis}} = 2^{0}, \dotsc,  2^{7}$ is shown in
-\autoref{fig:energy-spectrum-0-1.0}.
+\autoref{fig:energy-spectrum-varying-n_basis}.
 It is compared with the analytical energies, which are known to be
 \begin{equation*}
   E_{n}
@@ -1626,12 +1717,8 @@ It is compared with the analytical energies, which are known to be
 \end{equation*}
 in atomic units.
 Note that all pseudo-energies greater than 0, obtained by diagonalising the
-Hamiltonian matrix, are not presented in \autoref{fig:energy-spectrum-0-1.0}.
-It can be seen the bound energy spectrums do indeed converge to the analytical
-bound energies, as $\mathrm{n_{basis}}$ increases.
-It can also be seen that by approximately $\mathrm{n_{basis}} = 128$, that the
-bound energy spectrum is sufficiently dense as to approximate the analytical
-energy spectrum to a reasonable level.
+Hamiltonian matrix, are not presented in
+\autoref{fig:energy-spectrum-varying-n_basis}.
 
 \begin{figure}[h]
   \centering
@@ -1660,7 +1747,7 @@ energy spectrum to a reasonable level.
       , xtick={1, 2, 4, 8, 16, 32, 64, 128}
       , xticklabels={1, 2, 4, 8, 16, 32, 64, 128}
       , extra x ticks = {512}
-      , extra x tick labels={$\infty$}
+      , extra x tick labels={Analytical}
       ]
       \pgfmathsetmacro{\w}{0.4}
 
@@ -1689,19 +1776,189 @@ energy spectrum to a reasonable level.
     \end{axis}
   \end{tikzpicture}
   \caption{Bound energy spectrums, in units of \si{\hartree}, for a one-electron
-    Hydrogen atom, where $\ell = 0$, $\alpha = 1.0$, and where
+    Hydrogen atom, where $\ell = 0$, $\alpha_{\ell} = 1.0$, and where
     $\mathrm{n_{basis}} = 2^{0}, \dotsc, 2^{7}$.
-    It is compared with the analytical energies, represented at the label
-    $\mathrm{n_{basis}} = \infty$.}
-  \label{fig:energy-spectrum-0-1.0}
+    It is compared with the analytical energies.}
+  \label{fig:energy-spectrum-varying-n_basis}
 \end{figure}
+
+It can be seen the bound energy spectrums do indeed converge to the analytical
+bound energies, as $\mathrm{n_{basis}}$ increases.
+It can also be seen that by approximately $\mathrm{n_{basis}} = 128$, that the
+bound energy spectrum is sufficiently dense as to approximate the analytical
+energy spectrum to a reasonable level.
 
 % figure: for fixed n_basis and varying alpha, the behaviour of the eigenvalue
 % spectrum, and the consequences it could have on subsequent scattering
 % calculations
 
+The bound energy spectrum of a one-electron Hydrogen atom, calculated for
+$l = 0$, $\mathrm{n_{basis}} = 64$, and for varying
+$\alpha_{\ell} = 0.50, 0.75, \dotsc, 1.50$, is shown in
+\autoref{fig:energy-spectrum-varying-alpha}.
+It is compared with the analytical energies, which are known to be
+\begin{equation*}
+  E_{n}
+  =
+  -
+  \dfrac{1}{2 n^{2}}
+  \qq{for}
+  n = 1, 2, \dotsc
+\end{equation*}
+in atomic units.
+Note that all pseudo-energies greater than 0, obtained by diagonalising the
+Hamiltonian matrix, are not presented in
+\autoref{fig:energy-spectrum-varying-alpha}.
+Note also that the basis size is identical for each calculation, but the number
+of bound pseudo-energies is not necessarily identical.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      , scale = 1.5
+      , title = {Bound Energy Spectrum for [$\ell = 0$,
+        $\mathrm{n_{basis}} = 64$] with varying $\alpha_{\ell}$}
+      , xlabel = {$\alpha_{\ell}$}
+      , ylabel = {Energy}
+      , x unit = {}
+      , y unit = {\si{\hartree}}
+      , xmin = 0.3
+      , xmax = 2.2
+      , ymin = -0.55
+      , ymax = 0.0
+      , restrict y to domain=-0.55:0.0
+      , grid = minor
+      , legend entries
+      , legend style = {
+        cells = {anchor=east}
+        , legend pos = north east
+        , font = \tiny
+      }
+      , xtick={0.50, 0.75, 1.00, 1.25, 1.50}
+      , xticklabels={0.50, 0.75, 1.00, 1.25, 1.50}
+      , extra x ticks={2.0}
+      , extra x tick labels={Analytical}
+      ]
+      \pgfmathsetmacro{\w}{0.10}
+
+      \foreach \a in {0.5000, 0.7500, 1.0000, 1.2500, 1.5000}{
+        \pgfplotstableread[header=false, col sep=space, row sep=newline]
+        {../output/l-0.m-0.alpha-\a.atomic_charge-1.n_basis-64/eigen_values.txt}
+        {\data}
+
+        \pgfplotstableforeachcolumnelement{[index]0}\of\data\as\energy{%
+          \addplot [black, mark=none] coordinates {
+            (\a - \w), \energy)
+            (\a + \w), \energy)
+          };
+        }
+
+        \pgfplotstableclear{\data}
+      }
+
+      \foreach \k in {1, ..., 50}{
+        \pgfmathsetmacro{\energy}{-0.5 / (\k ^ 2)}
+        \addplot [black, thick, mark=none] coordinates {
+          (2.0 - \w, \energy)
+          (2.0 + \w), \energy)
+        };
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Bound energy spectrums, in units of \si{\hartree}, for a one-electron
+    Hydrogen atom, where $\ell = 0$, $\mathrm{n_{basis}} = 64$, and where
+    $\alpha = 0.50, 0.75, \dotsc, 1.50$.
+    It is compared with the analytical energies, represented at the label
+    $\mathrm{n_{basis}} = \infty$.}
+  \label{fig:energy-spectrum-varying-alpha}
+\end{figure}
+
+It can be seen that as $\alpha_{\ell}$ decreases, the bound energy spectrum
+becomes increasingly dense, and thus, it can be inferred that the continuum
+energy spectrum becomes increasingly sparse (since the total number of
+psuedo-states, across bound and continuum states, is identical for each
+calculation).
+Conversely, as $\alpha_{\ell}$ increases, the bound energy spectrum becomes
+increasingly sparse, while the continuum energy spectrum becomes increasingly
+dense.
+
+An implication of this observation is that for scattering calculations, if a
+radial basis with a small value of $\alpha_{\ell}$ is utilised for the target
+states, then the discretisation of the continuum energy spectrum might be
+insufficient to model long-range interactions between the target electron and
+the projectile.
+That is, over-emphasising short-range or long-range structure, by using either a
+small or large value for $\alpha_{\ell}$ may lead to inaccurate scattering
+calculations.
+
 % figures: for a satisfactory converged n_basis, a figure each for l = 0, l = 1,
 % comparing the first (3) bound states with analytical solutions
+
+We observe that for $\mathrm{n_{basis}} = 128$, the calculation is sufficiently
+convergent to analytical solutions of the one-electron Hydrogen atom.
+We present, for $\alpha_{\ell} = 1.0$ and $\mathrm{n_{basis}} = 128$, the first
+three bound-state calculated radial functions, for the cases of $\ell = 0, 1$ in
+\autoref{fig:bound-states}.
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 0$]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 20
+        , ymin = -1.0
+        , ymax = 1.0
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 3} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(3 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-0.m-0.alpha-1.0000.atomic_charge-1.n_basis-128/eigen_basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\overline{\Phi}_{\n, 0}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption
+    {
+      $\overline{\Phi}_{k, 0}\lr{r}$ for $k = 1, 2, 3$, with
+      $\alpha_{\ell} = 1.0$, $\mathrm{n_{basis}} = 128$.
+    }
+    \label{fig:bound-states-0}
+  \end{subfigure}
+
+
+  \caption{...}
+    % The first four Laguerre radial basis functions are plotted for various cases
+    % of $\ell$ and $\alpha_{\ell}$.
+    % Note that every figure has the same y-axes bounds $\lrsq{-0.75, 0.75}$,
+    % whereas the x-axes bounds are $\lrsq{0, 20}$ for the $\alpha_{\ell} = 1.0$ cases,
+    % and $\lrset{0, 30}$ for the $\alpha_{\ell} = 0.5$ cases.
+    % Observe that $\varphi_{k, \ell}\lr{r}$ has $k$ extremal points, with
+    % each extrema being larger (in magnitude) than the preceeding extrema, before
+    % eventually exhibiting exponential decay to 0, after the last extremal point.
+  % }
+  \label{fig:bound-states}
+\end{figure}
 
 \subsection{Extension: $\mathrm{He}^{+}$ Ion}
 \label{sec:extens-he+-ion}
