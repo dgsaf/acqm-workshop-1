@@ -40,3 +40,15 @@ phys4000_workshop_1-figure6.pdf:
 	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure6" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
 
 phys4000_workshop_1-figure6.pdf: phys4000_workshop_1-figure6.md5
+phys4000_workshop_1-figure7.pdf: 
+	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure7" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
+
+phys4000_workshop_1-figure7.pdf: phys4000_workshop_1-figure7.md5
+phys4000_workshop_1-figure8.pdf: 
+	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure8" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
+
+phys4000_workshop_1-figure8.pdf: phys4000_workshop_1-figure8.md5
+phys4000_workshop_1-figure9.pdf: 
+	pdflatex -halt-on-error -interaction=batchmode -jobname "phys4000_workshop_1-figure9" "\def\tikzexternalrealjob{phys4000_workshop_1}\input{phys4000_workshop_1}"
+
+phys4000_workshop_1-figure9.pdf: phys4000_workshop_1-figure9.md5

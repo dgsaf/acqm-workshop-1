@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  12 MAY 2021 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1561,43 +1561,50 @@ Writing 'phys4000_workshop_1-figure5' to 'phys4000_workshop_1.makefile'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[16]
 Writing 'phys4000_workshop_1-figure6' to 'phys4000_workshop_1.figlist'.
 Writing 'phys4000_workshop_1-figure6' to 'phys4000_workshop_1.makefile'.
-[16]
+Writing 'phys4000_workshop_1-figure7' to 'phys4000_workshop_1.figlist'.
+Writing 'phys4000_workshop_1-figure7' to 'phys4000_workshop_1.makefile'.
+Writing 'phys4000_workshop_1-figure8' to 'phys4000_workshop_1.figlist'.
+Writing 'phys4000_workshop_1-figure8' to 'phys4000_workshop_1.makefile'.
+Writing 'phys4000_workshop_1-figure9' to 'phys4000_workshop_1.figlist'.
+Writing 'phys4000_workshop_1-figure9' to 'phys4000_workshop_1.makefile'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1963.
+(hyperref)                removing `math shift' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1963.
+(hyperref)                removing `superscript' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1963.
+(hyperref)                removing `math shift' on input line 2164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1968.
+(hyperref)                removing `math shift' on input line 2169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1968.
+(hyperref)                removing `math shift' on input line 2169.
 
 No complaints by nag.
 [17 <./phys4000_workshop_1-figure4.pdf>]
 ===== mode=`list and make': Use 'make -f phys4000_workshop_1.makefile' to gener
 ate all images. Then, re-run (pdf)latex phys4000_workshop_1. =====
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1979.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2180.
 [18 <./phys4000_workshop_1-figure5.pdf>] [19 <./phys4000_workshop_1-figure6.pdf
->]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1979.
+> <./phys4000_workshop_1-figure7.pdf> <./phys4000_workshop_1-figure8.pdf> <./ph
+ys4000_workshop_1-figure9.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2180.
  (./phys4000_workshop_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1979.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1979.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2180.
 
 Package rerunfilecheck Info: File `phys4000_workshop_1.out' has not changed.
 (rerunfilecheck)             Checksum: 3EE327DC9164F5D644854DF451233988;1464.
@@ -1607,57 +1614,59 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 48035 strings out of 492616
- 1098760 string characters out of 6106108
+ 48056 strings out of 492616
+ 1099095 string characters out of 6106108
  1789417 words of memory out of 5000000
- 50700 multiletter control sequences out of 15000+600000
- 548158 words of font info for 117 fonts, out of 8000000 for 9000
+ 50706 multiletter control sequences out of 15000+600000
+ 548635 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,15n,105p,792b,2268s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,15n,105p,1071b,2268s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/l1iz05g9hz5h2nhnd6
 8a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-
 full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/l1i
 z05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-te
-xlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
-exmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></nix/store/l1iz05g9hz5h2nhnd68a6
-3acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/
-cm/cmmi6.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full
--2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/l1iz05g9
-hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-
-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/s
-tore/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lx
-nn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/s
-hare/texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></nix/store/l1iz05g9hz5h2nhn
+1/public/amsfonts/cmextra/cmex9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1
+n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/sha
+re/texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></nix/store/l1iz05g9hz5h2nhn
 d68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsf
-onts/cm/cmr6.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-
-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/store/l1iz0
-5g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texliv
-e-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/
-store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5
-lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018
-/share/texmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></nix/store/l1iz05g9hz5h2
-nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/a
-msfonts/cm/cmti8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combi
-ned-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></nix/store/
-l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/t
-ype1/public/amsfonts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n
--texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pf
-b></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
-/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4000_workshop_1.pdf (19 pages, 442920 bytes).
+onts/cm/cmmi5.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined
+-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/l1i
+z05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-tex
+live-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/tex
+mf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63a
+cs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2
+018/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/l1iz05g9hz
+5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-com
+bined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store
+/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-
+texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63
+acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full
+-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/l1iz05g9
+hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmsy9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-
+combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmti8.pfb></nix/s
+tore/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fo
+nts/type1/public/amsfonts/cm/cmti9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lx
+nn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt
+10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/
+share/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2n
+hnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/am
+sfonts/cm/cmtt9.pfb>
+Output written on phys4000_workshop_1.pdf (19 pages, 510979 bytes).
 PDF statistics:
- 981 PDF objects out of 1000 (max. 8388607)
- 918 compressed objects within 10 object streams
+ 1045 PDF objects out of 1200 (max. 8388607)
+ 978 compressed objects within 10 object streams
  478 named destinations out of 1000 (max. 500000)
- 29384 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 29399 words of extra memory for PDF output out of 29859 (max. 10000000)
 

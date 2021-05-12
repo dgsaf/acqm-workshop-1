@@ -1898,8 +1898,77 @@ calculations.
 We observe that for $\mathrm{n_{basis}} = 128$, the calculation is sufficiently
 convergent to analytical solutions of the one-electron Hydrogen atom.
 We present, for $\alpha_{\ell} = 1.0$ and $\mathrm{n_{basis}} = 128$, the first
-three bound-state calculated radial functions, for the cases of $\ell = 0, 1$ in
-\autoref{fig:bound-states}.
+three bound-state calculated radial functions, for the cases of $\ell = 0, 1$,
+in \autoref{fig:bound-states}, and compare them with the analytical solutions
+for the one-electron Hydrogen atom, which are of the form
+\begin{equation*}
+  \overline{\Phi}_{k, \ell}\lr{r}
+  =
+  \sqrt
+  {
+    \lr[\bigg]
+    {
+      \dfrac
+      {
+        2
+      }
+      {
+        k
+        +
+        \ell
+      }
+    }^{3}
+    \dfrac
+    {
+      \lr{k - 1}!
+    }
+    {
+      2
+      \lr{k + \ell}
+      \lr{k + 2\ell}!
+    }
+  }
+  r
+  \lr[\big]
+  {
+    \tfrac
+    {
+      2
+      r
+    }
+    {
+      k
+      +
+      \ell
+    }
+  }^{\ell}
+  \exponential\lr[\big]
+  {
+    -
+    \tfrac
+    {
+      r
+    }
+    {
+      k
+      +
+      \ell
+    }
+  }
+  L_{k - 1}^{2\ell + 1}\lr[\big]
+  {
+    \tfrac
+    {
+      r
+    }
+    {
+      k
+      +
+      \ell
+    }
+  }
+\end{equation*}
+for $k = 1, 2, \dotsc$, for any given $\ell \in \lrset{0, 1, \dotsc}$.
 
 \begin{figure}[h]
   \centering
@@ -1907,7 +1976,7 @@ three bound-state calculated radial functions, for the cases of $\ell = 0, 1$ in
     \begin{tikzpicture}
       \begin{axis}[
         , scale = 0.75
-        , title = {[$\ell = 0$]}
+        , title = {[$\ell = 0$, Calculated]}
         , xlabel = {Radial Distance}
         , ylabel = {}
         , x unit = {a_{0}}
@@ -1920,9 +1989,9 @@ three bound-state calculated radial functions, for the cases of $\ell = 0, 1$ in
           , font = \tiny
         }
         , xmin = 0
-        , xmax = 20
-        , ymin = -1.0
-        , ymax = 1.0
+        , xmax = 40
+        , ymin = -0.8
+        , ymax = 0.8
         ]
 
         \pgfplotsforeachungrouped \n in {1, ..., 3} {
@@ -1940,23 +2009,155 @@ three bound-state calculated radial functions, for the cases of $\ell = 0, 1$ in
     \end{tikzpicture}
     \caption
     {
-      $\overline{\Phi}_{k, 0}\lr{r}$ for $k = 1, 2, 3$, with
-      $\alpha_{\ell} = 1.0$, $\mathrm{n_{basis}} = 128$.
+      Calculated $\overline{\Phi}_{k, 0}\lr{r}$ for $k = 1, 2, 3$.
     }
     \label{fig:bound-states-0}
   \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 0$, Analytic]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 40
+        , ymin = -0.8
+        , ymax = 0.8
+        , domain=0:40
+        ]
 
+        \pgfplotsforeachungrouped \n in {1, ..., 3} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(3 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../data/0.txt};
+          }\temp
+          \addlegendentryexpanded{$\overline{\Phi}_{\n, 0}\lr{r}$}
+        }
 
-  \caption{...}
-    % The first four Laguerre radial basis functions are plotted for various cases
-    % of $\ell$ and $\alpha_{\ell}$.
-    % Note that every figure has the same y-axes bounds $\lrsq{-0.75, 0.75}$,
-    % whereas the x-axes bounds are $\lrsq{0, 20}$ for the $\alpha_{\ell} = 1.0$ cases,
-    % and $\lrset{0, 30}$ for the $\alpha_{\ell} = 0.5$ cases.
-    % Observe that $\varphi_{k, \ell}\lr{r}$ has $k$ extremal points, with
-    % each extrema being larger (in magnitude) than the preceeding extrema, before
-    % eventually exhibiting exponential decay to 0, after the last extremal point.
-  % }
+      \end{axis}
+    \end{tikzpicture}
+    \caption
+    {
+      Analytic $\overline{\Phi}_{k, 0}\lr{r}$ for $k = 1, 2, 3$.
+    }
+    \label{fig:bound-states-0-analytic}
+  \end{subfigure}
+
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 1$, Calculated]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 40
+        , ymin = -0.8
+        , ymax = 0.8
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 3} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(3 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../output/l-1.m-0.alpha-1.0000.atomic_charge-1.n_basis-128/eigen_basis.txt};
+          }\temp
+          \addlegendentryexpanded{$\overline{\Phi}_{\n, 1}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption
+    {
+      Calculated $\overline{\Phi}_{k, 1}\lr{r}$ for $k = 1, 2, 3$.
+    }
+    \label{fig:bound-states-1}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.45\linewidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+        , scale = 0.75
+        , title = {[$\ell = 1$, Analytic]}
+        , xlabel = {Radial Distance}
+        , ylabel = {}
+        , x unit = {a_{0}}
+        , y unit = {}
+        , grid = major
+        , legend entries
+        , legend style = {
+          cells = {anchor=east}
+          , legend pos = north east
+          , font = \tiny
+        }
+        , xmin = 0
+        , xmax = 40
+        , ymin = -0.8
+        , ymax = 0.8
+        , domain=0:40
+        ]
+
+        \pgfplotsforeachungrouped \n in {1, ..., 3} {
+          \pgfmathtruncatemacro{\i}{100.0*real(\n - 1)/real(3 - 1)}
+          \edef\temp{\noexpand%
+            \addplot [
+            color = red!\i!black
+            ] table [y index = \n]
+            {../data/1.txt};
+          }\temp
+          \addlegendentryexpanded{$\overline{\Phi}_{\n, 1}\lr{r}$}
+        }
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption
+    {
+      Analytic $\overline{\Phi}_{k, 1}\lr{r}$ for $k = 1, 2, 3$.
+    }
+    \label{fig:bound-states-1-analytic}
+  \end{subfigure}
+  \caption{
+    The radial functions of the first three bound pseudostates of the
+    one-electron Hydrogen atom, $\overline{\Phi}_{k, \ell, 0}\lr{r}$ for
+    $k = 1, 2, 3$, for the cases of $\ell = 0, 1$ are plotted and compared with
+    the analytic solutions.
+    Note that both sets of calculated radial functions where calculated with
+    $\alpha_{\ell} = 1.0$ and $\mathrm{n_{basis}} = 128$.
+    Note that these are the radial functions
+    $\ket{\overline{\Phi}_{k, \ell, m}}
+    = \sum_{i}C_{k, i}\ket{\varphi_{i, \ell, m}}$, and so do not include the
+    $\tfrac{1}{r}$ term.
+    Observe that some of the analytic radial functions are phase-shifted from
+    the calculated radial functions by a factor of $e^{\imath\pi} = -1$.
+    However, the analytic and calculated radial functions represent the same
+    state, as states are considered to be equivalent under a phase-shift
+    transformation.
+  }
   \label{fig:bound-states}
 \end{figure}
 
