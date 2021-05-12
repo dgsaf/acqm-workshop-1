@@ -1,0 +1,6 @@
+# ignore everything in this directory except this file
+*
+!.gitignore
+!phys4000_workshop_1.tex
+!phys4000_workshop_1.pdf
+!base.sty
